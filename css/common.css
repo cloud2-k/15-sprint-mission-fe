@@ -13,15 +13,15 @@
   --error-red: #f74747;
 
   /* Secondary Color (Grays) */
-  --gray-900: #111827;
-  --gray-800: #1f2937;
-  --gray-700: #374151;
-  --gray-600: #4b5563;
-  --gray-500: #6b7280;
-  --gray-400: #9ca3af;
-  --gray-200: #e5e7eb;
-  --gray-100: #f3f4f6;
-  --gray-50: #f9fafb;
+  --secondary-900: #111827;
+  --secondary-800: #1f2937;
+  --secondary-700: #374151;
+  --secondary-600: #4b5563;
+  --secondary-500: #6b7280;
+  --secondary-400: #9ca3af;
+  --secondary-200: #e5e7eb;
+  --secondary-100: #f3f4f6;
+  --secondary-50: #f9fafb;
 }
 
 /* ==========================================================================
@@ -44,8 +44,8 @@ body {
     "Segoe UI Emoji",
     "Segoe UI Symbol",
     sans-serif;
-  color: var(--gray-900);
-  background-color: var(--gray-50);
+  color: var(--secondary-900);
+  background-color: var(--secondary-50);
 }
 
 /* ==========================================================================
@@ -217,7 +217,7 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none; /* a 태그로 버튼 만들 때 */
-  color: var(--gray-100); /* 기본 버튼 컬러(글자색) */
+  color: var(--secondary-100); /* 기본 버튼 컬러(글자색) */
 }
 
 /* ── [크기 분류] ── */
@@ -226,6 +226,11 @@ body {
   width: auto;
   height: 56px;
   padding: 0 124px;
+
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
+  font-style: SemiBold;
 }
 
 /* medium (가로 fixed / 세로 fixed) */
@@ -233,6 +238,11 @@ body {
   width: 240px;
   height: 48px;
   padding: 0;
+
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+  font-style: SemiBold;
 }
 
 .btn-md-icon {
@@ -241,6 +251,11 @@ body {
   border-radius: 40px;
   padding: 0;
   gap: 8px;
+
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+  font-style: SemiBold;
 }
 
 /* small 40 (가로 hug / 세로 fixed) */
@@ -249,6 +264,11 @@ body {
   height: 42px;
   border-radius: 8px;
   padding: 0 23px;
+
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600;
+  font-style: SemiBold;
 }
 
 /* small 48 (가로 fixed / 세로 fixed) */
@@ -257,6 +277,11 @@ body {
   height: 48px;
   border-radius: 8px;
   padding: 0;
+
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600;
+  font-style: SemiBold;
 }
 
 /* ── [스타일/컬러 분류] ── */
@@ -273,7 +298,7 @@ body {
 
 /* 흰색 버튼(btn-sm-48) */
 .btn-outline {
-  background-color: var(--gray-50);
+  background-color: var(--secondary-50);
   border: 1px solid var(--primary-100);
   color: var(--primary-100);
 }
@@ -281,6 +306,6 @@ body {
 /* 비활성화 버튼 */
 .btn-primary:disabled,
 .btn-disabled {
-  background-color: var(--gray-400);
+  background-color: var(--secondary-400);
   cursor: not-allowed;
 }
