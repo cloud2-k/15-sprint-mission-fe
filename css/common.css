@@ -1,0 +1,286 @@
+@charset "utf-8";
+
+/* ==========================================================================
+  1. 디자인 시스템 컬러 설정
+  ========================================================================== */
+:root {
+  /* Primary Color */
+  --primary-100: #3692ff;
+  --primary-200: #1967d6;
+  --primary-300: #1251aa;
+
+  /* Error Color */
+  --error-red: #f74747;
+
+  /* Secondary Color (Grays) */
+  --gray-900: #111827;
+  --gray-800: #1f2937;
+  --gray-700: #374151;
+  --gray-600: #4b5563;
+  --gray-500: #6b7280;
+  --gray-400: #9ca3af;
+  --gray-200: #e5e7eb;
+  --gray-100: #f3f4f6;
+  --gray-50: #f9fafb;
+}
+
+/* ==========================================================================
+  2. 기본 폰트 설정
+  ========================================================================== */
+body {
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    "Helvetica Neue",
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    "Malgun Gothic",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    sans-serif;
+  color: var(--gray-900);
+  background-color: var(--gray-50);
+}
+
+/* ==========================================================================
+  3. Pretendard 스타일 가이드
+  ========================================================================== */
+
+/* Text-3xl (32px / 42px) */
+.text-3xl-bold {
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 700; /* Bold */
+}
+.text-3xl-semibold {
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 600; /* Semibold */
+}
+
+/* Text-2xl (24px / 32px) */
+.text-2xl-bold {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700; /* Bold */
+}
+.text-2xl-semibold {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600; /* Semibold */
+}
+.text-2xl-medium {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500; /* Medium */
+}
+.text-2xl-regular {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400; /* Regular */
+}
+
+/* Text-xl (20px / 32px) */
+.text-xl-bold {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 700; /* Bold */
+}
+.text-xl-semibold {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600; /* Semibold */
+}
+.text-xl-medium {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 500; /* Medium */
+}
+.text-xl-regular {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400; /* Regular */
+}
+
+/* Text-2lg (18px / 26px) */
+.text-2lg-bold {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700; /* Bold */
+}
+.text-2lg-semibold {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600; /* Semibold */
+}
+.text-2lg-medium {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500; /* Medium */
+}
+.text-2lg-regular {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400; /* Regular */
+}
+
+/* Text-lg (16px / 26px) */
+.text-lg-bold {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 700; /* Bold */
+}
+.text-lg-semibold {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600; /* Semibold */
+}
+.text-lg-medium {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500; /* Medium */
+}
+.text-lg-regular {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400; /* Regular */
+}
+
+/* Text-md (14px / 24px) */
+.text-md-bold {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700; /* Bold */
+}
+.text-md-semibold {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600; /* Semibold */
+}
+.text-md-medium {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500; /* Medium */
+}
+.text-md-regular {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400; /* Regular */
+}
+
+/* Text-sm (13px / 22px) */
+.text-sm-semibold {
+  font-size: 13px;
+  line-height: 22px;
+  font-weight: 600; /* Semibold */
+}
+.text-sm-medium {
+  font-size: 13px;
+  line-height: 22px;
+  font-weight: 500; /* Medium */
+}
+
+/* Text-xs (12px) */
+.text-xs-semibold {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 600; /* Semibold */
+}
+.text-xs-medium {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500; /* Medium */
+}
+.text-xs-regular {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400; /* Regular */
+}
+
+/* ==========================================================================
+  4. 공통 버튼 컴포넌트 (Button System)
+  ========================================================================== */
+/* ── [기본 베이스] ── */
+.btn-base {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none; /* a 태그로 버튼 만들 때 */
+  color: var(--gray-100); /* 기본 버튼 컬러(글자색) */
+}
+
+/* ── [크기 분류] ── */
+/* large (가로 hug / 세로 fixed) */
+.btn-lg {
+  width: auto;
+  height: 56px;
+  padding: 0 124px;
+}
+
+/* medium (가로 fixed / 세로 fixed) */
+.btn-md {
+  width: 240px;
+  height: 48px;
+  padding: 0;
+}
+
+.btn-md-icon {
+  width: 240px;
+  height: 48px;
+  border-radius: 40px;
+  padding: 0;
+  gap: 8px;
+}
+
+/* small 40 (가로 hug / 세로 fixed) */
+.btn-sm-40 {
+  width: auto;
+  height: 42px;
+  border-radius: 8px;
+  padding: 0 23px;
+}
+
+/* small 48 (가로 fixed / 세로 fixed) */
+.btn-sm-48 {
+  width: 88px;
+  height: 48px;
+  border-radius: 8px;
+  padding: 0;
+}
+
+/* ── [스타일/컬러 분류] ── */
+/* 기본 블루 버튼 */
+.btn-primary {
+  background-color: var(--primary-100);
+}
+.btn-primary:hover {
+  background-color: var(--primary-200);
+}
+.btn-primary:active {
+  background-color: var(--primary-300);
+}
+
+/* 흰색 버튼(btn-sm-48) */
+.btn-outline {
+  background-color: var(--gray-50);
+  border: 1px solid var(--primary-100);
+  color: var(--primary-100);
+}
+
+/* 비활성화 버튼 */
+.btn-primary:disabled,
+.btn-disabled {
+  background-color: var(--gray-400);
+  cursor: not-allowed;
+}
