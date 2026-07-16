@@ -3,6 +3,10 @@ header {
   height: 70px;
   background-color: #ffffff;
   border-bottom: 1px solid #dfdfdf;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .gnb-container {
   max-width: 1920px;
