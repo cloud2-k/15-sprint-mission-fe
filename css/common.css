@@ -309,3 +309,52 @@ body {
   background-color: var(--secondary-400);
   cursor: not-allowed;
 }
+
+/* ==========================================================================
+  5. input 스타일
+  ========================================================================== */
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.input-box label {
+  color: var(--secondary-800);
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.input-box .input-wrapper {
+  position: relative;
+  width: 640px;
+}
+
+.input-box input {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  padding: 16px 24px;
+  background-color: var(--secondary-100);
+  border: 1px solid transparent;
+  outline: none;
+}
+.input-box input::placeholder {
+  color: var(--secondary-400);
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.input-box input:focus {
+  border: 1px solid var(--primary-100);
+}
+
+.input-box .eye-button {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}

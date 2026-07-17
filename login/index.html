@@ -8,10 +8,76 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
     />
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="login.css" />
     <title>판다마켓</title>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <div class="main-container">
+        <a href="/" class="logo">
+          <img src="../assets/images/logo-lg.png" />
+        </a>
+        <div class="content-container">
+          <div class="form-box">
+            <form>
+              <div class="input-box">
+                <label for="input-email">이메일</label>
+                <div class="input-wrapper">
+                  <input
+                    type="email"
+                    id="input-email"
+                    placeholder="이메일을 입력해주세요"
+                  />
+                </div>
+              </div>
+              <div class="input-box">
+                <label for="input-password">비밀번호</label>
+                <div class="input-wrapper">
+                  <input
+                    type="password"
+                    id="input-password"
+                    placeholder="비밀번호를 입력해주세요"
+                  />
+                  <button type="button" class="eye-button">
+                    <img
+                      src="../assets/icons/btn_visibility_off.svg"
+                      alt="비밀번호 표시/숨김"
+                    />
+                  </button>
+                </div>
+              </div>
+              <button type="submit" class="btn-base btn-lg btn-primary">
+                로그인
+              </button>
+            </form>
+          </div>
+          <div class="social-login-box">
+            <span class="text-lg-medium">간편 로그인하기</span>
+            <div class="social-btns">
+              <a href="https://www.google.com/">
+                <img
+                  src="../assets/images/icon_google.png"
+                  alt="구글 로고 아이콘"
+                  class="social-icon"
+                />
+              </a>
+              <a href="https://www.kakaocorp.com/page/">
+                <img
+                  src="../assets/images/icon_kakao.png"
+                  alt="카카오 로고 아이콘"
+                  class="social-icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="signup-box">
+            <span class="signup-info">판다마켓이 처음이신가요?</span>
+            <a class="signup-link" href="../signup/">회원가입</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
