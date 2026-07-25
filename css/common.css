@@ -230,7 +230,6 @@ body {
   font-size: 20px;
   line-height: 32px;
   font-weight: 600;
-  font-style: SemiBold;
 }
 
 /* medium (가로 fixed / 세로 fixed) */
@@ -242,7 +241,6 @@ body {
   font-size: 18px;
   line-height: 26px;
   font-weight: 600;
-  font-style: SemiBold;
 }
 
 .btn-md-icon {
@@ -255,7 +253,6 @@ body {
   font-size: 18px;
   line-height: 26px;
   font-weight: 600;
-  font-style: SemiBold;
 }
 
 /* small 40 (가로 hug / 세로 fixed) */
@@ -268,7 +265,6 @@ body {
   font-size: 16px;
   line-height: 26px;
   font-weight: 600;
-  font-style: SemiBold;
 }
 
 /* small 48 (가로 fixed / 세로 fixed) */
@@ -281,7 +277,6 @@ body {
   font-size: 16px;
   line-height: 26px;
   font-weight: 600;
-  font-style: SemiBold;
 }
 
 /* ── [스타일/컬러 분류] ── */

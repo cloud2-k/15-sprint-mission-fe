@@ -52,19 +52,19 @@ main {
   height: 42px;
 }
 
-.signup-box {
+.auth-box {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 4px;
 }
-.signup-info {
+.auth-info {
   font-size: 14px;
   line-height: 24px;
   font-weight: 500;
   color: var(--secondary-800);
 }
-.signup-link {
+.auth-link {
   font-size: 14px;
   line-height: 100%;
   font-weight: 500;
