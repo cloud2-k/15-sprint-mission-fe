@@ -1,0 +1,1 @@
+// Article API 관련 함수
