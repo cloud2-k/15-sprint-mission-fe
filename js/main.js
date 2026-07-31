@@ -5,5 +5,6 @@
  */
 
 import articleService from "./api/ArticleService.js";
+import productService from "./api/ProductService.js";
 
 console.log("메인");
