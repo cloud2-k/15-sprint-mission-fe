@@ -4,7 +4,7 @@
  * @file Product API 관련 함수 모듈
  * @module api/ProductService
  * @author 김수지
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 import { instance } from "./client.js";
@@ -39,7 +39,7 @@ async function getProduct(id) {
  * @param {string} productData.description - 상품 설명
  * @param {number} productData.price - 상품 가격
  * @param {string} productData.tags - 상품 태그
- * @param {string} productData.images - 상품 링크
+ * @param {string[]} productData.images - 상품 이미지 링크 배열
  * @returns {Promise<any>} product 데이터 (Axios 응답)
  */
 async function createProduct(productData) {
@@ -55,7 +55,7 @@ async function createProduct(productData) {
  * @param {string} productData.description - 상품 설명
  * @param {number} productData.price - 상품 가격
  * @param {string} productData.tags - 상품 태그
- * @param {string} productData.images - 상품 링크
+ * @param {string[]} productData.images - 상품 이미지 링크 배열
  * @returns {Promise<any>} product 데이터 (Axios 응답)
  */
 async function patchProduct(id, productData) {

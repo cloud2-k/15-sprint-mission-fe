@@ -4,7 +4,7 @@
  * @file Article API 관련 함수 모듈
  * @module api/articleApi
  * @author 김수지
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 import { instance } from "./client.js";
@@ -24,7 +24,7 @@ async function getArticleList(params = {}) {
 
 /**
  * id로 article을 조회합니다.
- * @param {string} id
+ * @param {number} id
  * @returns {Promise<any>} article 데이터 (Axios 응답)
  */
 async function getArticle(id) {
@@ -47,7 +47,7 @@ async function createArticle(articleData) {
 
 /**
  * articleData로 article을 수정합니다.
- * @param {string} id - article ID
+ * @param {number} id - article ID
  * @param {Object} articleData - article 정보 객체
  * @param {string} articleData.title - article 제목
  * @param {string} articleData.content - article 내용
@@ -61,7 +61,7 @@ async function patchArticle(id, articleData) {
 
 /**
  * id로 article을 삭제합니다.
- * @param {string} id - article ID
+ * @param {number} id - article ID
  * @returns {Promise<any>} article 데이터 (Axios 응답)
  */
 async function deleteArticle(id) {
@@ -69,4 +69,10 @@ async function deleteArticle(id) {
   return res.data;
 }
 
-export default { getArticleList, getArticle, createArticle, patchArticle, deleteArticle };
+export default {
+  getArticleList,
+  getArticle,
+  createArticle,
+  patchArticle,
+  deleteArticle,
+};
