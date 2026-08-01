@@ -76,3 +76,57 @@
 #### 로그인 페이지, 회원가입 페이지 공통
 
 - [x] 비밀번호, 비밀번호 확인 input 요소 오른쪽에 비밀번호를 확인할 수 있는 눈 모양 아이콘을 추가합니다.
+
+## 스프린트 미션3
+
+### 기본 요구사항
+
+- [x] Github에 스프린트 미션 PR을 만들어 주세요.
+- [x] 'https://panda-market-api-crud.vercel.app/docs/#/Article' API를 이용하여 아래 함수들을 구현해 주세요.
+  - [x] getArticleList() : GET 메서드를 사용해 주세요.
+    - [x] page, pageSize, keyword 쿼리 파라미터를 이용해 주세요.
+  - [x] getArticle() : GET 메서드를 사용해 주세요.
+  - [x] createArticle() : POST 메서드를 사용해 주세요.
+    - [x] request body에 title, content, image 를 포함해 주세요.
+  - [x] patchArticle() : PATCH 메서드를 사용해 주세요.
+  - [x] deleteArticle() : DELETE 메서드를 사용해 주세요.
+- [x] fetch 혹은 axios 를 이용해 주세요.
+  - [x] 응답의 상태 코드가 2XX가 아닐 경우, 에러메시지를 콘솔에 출력해 주세요.
+- [ ] .then() 메서드를 이용하여 비동기 처리를 해주세요. → try catch 문 사용으로 통일
+- [ ] .catch() 를 이용하여 오류 처리를 해주세요. → try catch 문 사용으로 통일
+- [x] 'https://panda-market-api-crud.vercel.app/docs/#/Product' API를 이용하여 아래 함수들을 구현해 주세요.
+  - [x] getProductList() : GET 메서드를 사용해 주세요.
+    - [x] page, pageSize, keyword 쿼리 파라미터를 이용해 주세요.
+  - [x] getProduct() : GET 메서드를 사용해 주세요.
+  - [x] createProduct() : POST 메서드를 사용해 주세요.
+    - [x] request body에 name, description, price, tags, images 를 포함해 주세요.
+  - [x] patchProduct() : PATCH 메서드를 사용해 주세요.
+  - [x] deleteProduct() : DELETE 메서드를 사용해 주세요.
+- [x] async/await 을 이용하여 비동기 처리를 해주세요.
+- [x] try/catch 를 이용하여 오류 처리를 해주세요.
+- [x] 구현한 함수들을 아래와 같이 파일을 분리해 주세요.
+  - [x] export를 활용해 주세요.
+  - [x] ProductService.js 파일 Product API 관련 함수들을 작성해 주세요.
+  - [x] ArticleService.js 파일에 Article API 관련 함수들을 작성해 주세요.
+- [x] 이외의 코드들은 모두 main.js 파일에 작성해 주세요.
+  - [x] import를 활용해 주세요.
+  - [x] 각 함수를 실행하는 코드를 작성하고, 제대로 동작하는지 확인해 주세요.
+
+### 학습 내용 및 트러블슈팅
+
+#### 1. Fetch 대신 Axios 사용 및 CDN 모듈 환경 구성
+- 수업과 실습에서는 주로 브라우저 내장 API인 `fetch`를 사용해왔기 때문에 공부를 위해 `Axios`를 도입하여 API를 구현했습니다.
+- **환경 구성:** 순수 Vanilla 자바스크립트 환경에서는 브라우저에서 npm 모듈을 읽을 수 없어, CDN 방식을 사용해야 한다는 사실을 배웠습니다. 따라서 `import axios from "axios";` 방식을 주석 처리하고, `import axios from "https://cdn.jsdelivr.net/npm/axios/+esm";` 구문을 사용하여 ES Modules 형태로 안전하게 로드했습니다.
+
+#### 2. 브라우저 테스트 환경 구성 및 요구사항 엄수
+- **테스트:** API 동작 검증을 위해 `main.js` 파일을 작성하고, 테스트 과정에서는 `index.html`에 `<script type="module" src="./js/main.js"></script>` 코드를 임시로 삽입하여 브라우저 콘솔에서 결과를 확인했습니다.
+- 요구사항에 HTML 수정을 요구하는 내용이 없었으므로, 테스트 완료 후 해당 스크립트 연결 코드는 Git 커밋 내역에 포함되지 않도록 하였습니다.
+
+#### 3. 네트워크 지연에 따른 Timeout 에러 해결
+- **문제:** API 통신 중 간헐적으로 타임아웃(Timeout) 에러가 발생하여 테스트가 중단되는 현상이 있었습니다.
+- **원인 및 해결:** 데이터 쓰기(POST) 작업의 물리적 지연이 원인임을 파악했습니다. 이에 `client.js`의 전역 Axios 설정에서 `timeout` 값을 기존 `3000ms`에서 `10000ms`로 조정하여 문제를 해결했습니다.
+
+#### 4. 400 Bad Request 디버깅 및 JSDoc 타입 구체화
+- **문제:** 데이터를 생성(POST)하는 과정에서 400 Bad Request (`Not match in '^https?://.+'`) 에러가 발생했습니다.
+- **원인 및 해결:** 이미지 링크 입력란에 실제 HTTP 형식이 아닌 한글 더미 문자열(`"주소링크"`)을 입력했던 것이 원인이었습니다. 백엔드에서 반환한 에러 로그를 확인하여 원인을 파악하고, 이를 `https://~` 형식의 URL로 수정하여 해결했습니다.
+- **추가 개선:** 문제를 해결하는 과정에서 반환 타입이 모호했던 `Promise<any>`를 `Promise<Object>`로 구체화하여 JSDoc 문서의 완성도와 에디터 자동완성 효율을 높였습니다.
