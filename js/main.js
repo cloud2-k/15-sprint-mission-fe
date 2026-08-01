@@ -1,7 +1,7 @@
 /**
  * @file 메인 페이지 진입점 (Entry Point) 스크립트
  * @author 김수지
- * @version 1.1.0
+ * @version 1.1.1
  */
 
 import articleService from "./api/ArticleService.js";
@@ -58,7 +58,17 @@ async function testArticleApi() {
     });
     console.log("✅ article 목록 조회(파라미터) 성공: ", res6);
   } catch (e) {
-    console.error("❌ article API 테스트 중 에러 발생: ", e.message || e);
+    if (e.response) {
+      // 리퀘스트는 성공했지만 상태 코드가 실패(4XX, 5XX)를 나타냄
+      console.error(
+        "❌ article API 테스트 중 에러 발생: ",
+        e.response.status,
+        e.response.data,
+      );
+    } else {
+      // 리퀘스트 자체가 실패
+      console.error("❌ article API 테스트 중 에러 발생: 리퀘스트 실패");
+    }
   } finally {
     console.groupEnd();
   }
