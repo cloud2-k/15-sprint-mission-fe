@@ -1,4 +1,10 @@
+import UsedProductsPage from "./pages/UsedProductsPage";
+
 function App() {
-  return <div>App</div>;
+  return (
+    <>
+      <UsedProductsPage />
+    </>
+  );
 }
 export default App;
