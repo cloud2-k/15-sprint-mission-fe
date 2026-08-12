@@ -1,0 +1,16 @@
+.bestProduct {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  padding: 16px 0 24px;
+}
+
+.title {
+  color: var(--secondary-900, #111827);
+}
+
+.productList {
+  width: 100%;
+}

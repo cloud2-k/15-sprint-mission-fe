@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.cardImageWrapper {
+  width: 100%;
+  height: auto;
+}
+
+.cardImage {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  color: var(--secondary-800, #1f2937);
+}
+
+.heart {
+  display: flex;
+  flex-shrink: 0;
+  gap: 4px;
+  align-items: center;
+  color: var(--secondary-600, #4b5563);
+}
+
+.heartIcon {
+  width: 16px;
+  height: 16px;
+}

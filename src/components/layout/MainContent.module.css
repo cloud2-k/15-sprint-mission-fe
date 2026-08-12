@@ -1,0 +1,12 @@
+.wrapper {
+  width: 100%;
+  padding: 0 16px 135px;
+  background: #fcfcfc;
+}
+
+.content {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
