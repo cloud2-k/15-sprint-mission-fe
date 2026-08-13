@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 import heartIcon from "../../assets/ic_heart.svg";
-import defultProductImg from "../../assets/product.png";
+import defaultProductImg from "../../assets/img_product_default.png";
 
 import styles from "./ProductCard.module.css";
 
@@ -10,7 +10,7 @@ function ProductCard({ varient }) {
     <li className={clsx(styles.card, { [styles.best]: varient === "best" })}>
       {/* 이미지 영역 */}
       <div className={styles.cardImageWrapper}>
-        <img src={defultProductImg} className={styles.cardImage} />
+        <img src={defaultProductImg} className={styles.cardImage} />
       </div>
       {/* 컨텐츠 영역 */}
       <div className={styles.cardContent}>

@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import useIsMobile from "../../hooks/useIsMobile";
 import Button from "../ui/Button";
-import logoPc from "../../assets/logo-pc.svg";
-import logoMo from "../../assets/logo-mo.svg";
+import logoPc from "../../assets/img_logo_pc.svg";
+import logoMo from "../../assets/img_logo_mo.svg";
 import styles from "./Header.module.css";
 
 function Header() {

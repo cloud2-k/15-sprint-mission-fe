@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import prevIcon from "../../assets/arrow_left.svg";
-import nextIcon from "../../assets/arrow_right.svg";
+import prevIcon from "../../assets/ic_arrow_left.svg";
+import nextIcon from "../../assets/ic_arrow_right.svg";
 
 import styles from "./Pagination.module.css";
 
