@@ -1,3 +1,6 @@
+/* =========================================
+  1. 기본 스타일(모바일)
+========================================= */
 .dropdownWrapper {
   position: relative;
   display: inline-block;
@@ -45,3 +48,21 @@
 .dropdownItem:last-child {
   border-bottom: none;
 }
+
+/* =========================================
+  2. 태블릿 사이즈 (744px 이상)
+========================================= */
+@media (width >= 744px) {
+  .dropdownButton {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 130px;
+    height: 42px;
+    padding: 12px 20px;
+  }
+}
+
+/* =========================================
+  3. PC 사이즈 (1024px 이상) -> 태블릿과 동일
+========================================= */

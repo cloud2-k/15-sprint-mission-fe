@@ -9,7 +9,7 @@ import styles from "./Dropdown.module.css";
 function Dropdown({
   options = [
     { value: "recent", label: "최신순" },
-    { value: "heart", label: "좋아요순" },
+    { value: "favorite", label: "좋아요순" },
   ],
   selectedValue = { value: "recent", label: "최신순" },
   onSelect,
@@ -27,7 +27,9 @@ function Dropdown({
     <div className={styles.dropdownWrapper}>
       <button onClick={() => setIsOpen(!isOpen)}>
         <div className={styles.dropdownButton}>
-          {isMobile || <span>{selectedValue.label}</span>}
+          {isMobile || (
+            <span className="text-lg-regular">{selectedValue.label}</span>
+          )}
           <img src={isMobile ? mobileIcon : pcIcon} />
         </div>
       </button>

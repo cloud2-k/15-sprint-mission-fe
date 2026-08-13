@@ -6,7 +6,10 @@ import { useState, useEffect } from "react";
  * @returns {boolean} - 모바일이면(breakpoint 미만) true
  */
 const useIsMobile = (breakpoint = 744) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === "undefined") return false; // SSR 대비
+    return window.matchMedia(`(max-width: ${breakpoint - 1}px)`).matches;
+  });
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(`(max-width: ${breakpoint - 1}px)`);

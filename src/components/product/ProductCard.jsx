@@ -5,9 +5,9 @@ import defultProductImg from "../../assets/product.png";
 
 import styles from "./ProductCard.module.css";
 
-function ProductCard() {
+function ProductCard({ varient }) {
   return (
-    <li className={styles.card}>
+    <li className={clsx(styles.card, { [styles.best]: varient === "best" })}>
       {/* 이미지 영역 */}
       <div className={styles.cardImageWrapper}>
         <img src={defultProductImg} className={styles.cardImage} />
