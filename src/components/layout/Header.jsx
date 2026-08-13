@@ -1,12 +1,12 @@
 import clsx from "clsx";
-import useIsMobile from "../../hooks/useIsMobile";
+import useDeviceType from "../../hooks/useDeviceType";
 import Button from "../ui/Button";
 import logoPc from "../../assets/img_logo_pc.svg";
 import logoMo from "../../assets/img_logo_mo.svg";
 import styles from "./Header.module.css";
 
 function Header() {
-  const isMobile = useIsMobile();
+  const { isMobile } = useDeviceType();
   const logoImg = isMobile ? logoMo : logoPc;
 
   return (

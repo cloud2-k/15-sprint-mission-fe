@@ -1,7 +1,8 @@
 import clsx from "clsx";
 
 import { useState } from "react";
-import useIsMobile from "../../hooks/useIsMobile";
+import useDeviceType from "../../hooks/useDeviceType";
+import useProducts from "../../hooks/useProducts";
 
 import Button from "../ui/Button";
 import Input from "../ui/Input";
@@ -10,6 +11,8 @@ import Dropdown from "../ui/Dropdown";
 import Pagination from "../ui/Pagination";
 
 import styles from "./SaleProductList.module.css";
+import Spinner from "../ui/Spinner";
+import ErrorView from "../ui/ErrorView";
 
 const DROPDOWN_OPTIONS = [
   { value: "recent", label: "최신순" },
@@ -17,18 +20,34 @@ const DROPDOWN_OPTIONS = [
 ];
 
 function SaleProductList() {
-  const isMobile = useIsMobile();
-
+  const { device, isMobile } = useDeviceType();
   const [selectedValue, setSelectedValue] = useState(DROPDOWN_OPTIONS[0]);
   const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = device === "MOBILE" ? 4 : device === "TABLET" ? 6 : 10;
+  const { products, totalCount, isLoading, error, refetch } = useProducts({
+    page: currentPage,
+    pageSize: pageSize,
+    orderBy: selectedValue.value,
+  });
+
+  const minHeight = device === "MOBILE" ? 668 : device === "TABLET" ? 740 : 674;
 
   const handleSelect = (value) => {
     setSelectedValue(value);
-    console.log("서버 전송 value:", value);
+    refetch({
+      page: currentPage,
+      pageSize: pageSize,
+      orderBy: value.value,
+    });
   };
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
+    refetch({
+      page: newPage,
+      pageSize: pageSize,
+      orderBy: selectedValue.value,
+    });
   };
 
   const titleElement = (
@@ -72,16 +91,20 @@ function SaleProductList() {
           </>
         )}
       </div>
-      {/* 상품 목록 영역 */}
-      <ul className={styles.productList}>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-      </ul>
+      {isLoading ? (
+        <Spinner minHeight={minHeight} />
+      ) : error ? (
+        <ErrorView minHeight={minHeight} message={error} />
+      ) : (
+        <ul className={styles.productList}>
+          {products.map((product) => (
+            <ProductCard key={product.id} item={product} />
+          ))}
+        </ul>
+      )}
       <Pagination
-        totalItems={40}
-        itemsPerPage={4}
+        totalItems={totalCount}
+        itemsPerPage={pageSize}
         currentPage={currentPage}
         onPageChange={handlePageChange}
       />

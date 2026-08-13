@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 import { useState } from "react";
-import useIsMobile from "../../hooks/useIsMobile";
+import useDeviceType from "../../hooks/useDeviceType";
 import mobileIcon from "../../assets/ic_sort.svg";
 import pcIcon from "../../assets/ic_arrow_down.svg";
 import styles from "./Dropdown.module.css";
@@ -16,7 +16,7 @@ function Dropdown({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const isMobile = useIsMobile();
+  const { isMobile } = useDeviceType();
 
   const handleItemClick = (opt) => {
     onSelect(opt);
