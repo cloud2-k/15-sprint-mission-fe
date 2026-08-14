@@ -1,19 +1,14 @@
+import { useState } from "react";
 import clsx from "clsx";
 
-import { useState } from "react";
 import useDeviceType from "../../hooks/useDeviceType";
+
 import mobileIcon from "../../assets/ic_sort.svg";
 import pcIcon from "../../assets/ic_arrow_down.svg";
+
 import styles from "./Dropdown.module.css";
 
-function Dropdown({
-  options = [
-    { value: "recent", label: "최신순" },
-    { value: "favorite", label: "좋아요순" },
-  ],
-  selectedValue = { value: "recent", label: "최신순" },
-  onSelect,
-}) {
+function Dropdown({ options, selectedValue, onSelect }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const { isMobile } = useDeviceType();
@@ -27,10 +22,10 @@ function Dropdown({
     <div className={styles.dropdownWrapper}>
       <button onClick={() => setIsOpen(!isOpen)}>
         <div className={styles.dropdownButton}>
-          {isMobile || (
+          {!isMobile && (
             <span className="text-lg-regular">{selectedValue.label}</span>
           )}
-          <img src={isMobile ? mobileIcon : pcIcon} />
+          <img src={isMobile ? mobileIcon : pcIcon} alt="정렬" />
         </div>
       </button>
       {isOpen && (
@@ -39,9 +34,7 @@ function Dropdown({
             <li
               key={opt.value}
               className={clsx("text-lg-regular", styles.dropdownItem)}
-              onClick={() => {
-                handleItemClick(opt);
-              }}
+              onClick={() => handleItemClick(opt)}
             >
               {opt.label}
             </li>

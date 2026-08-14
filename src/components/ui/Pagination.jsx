@@ -23,7 +23,6 @@ function Pagination({ totalItems, itemsPerPage, currentPage, onPageChange }) {
     { length: PAGE_GROUP_SIZE },
     (_, i) => i + startPage,
   );
-  console.log("pageNumbers", pageNumbers);
 
   return (
     <div className={styles.paginationWrapper}>

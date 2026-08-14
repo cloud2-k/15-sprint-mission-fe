@@ -19,42 +19,36 @@ const DROPDOWN_OPTIONS = [
   { value: "favorite", label: "좋아요순" },
 ];
 
+const DEVICE_CONFIG = {
+  MOBILE: { pageSize: 4, minHeight: 668 },
+  TABLET: { pageSize: 6, minHeight: 740 },
+  PC: { pageSize: 10, minHeight: 674 },
+};
+
 function SaleProductList() {
   const { device, isMobile } = useDeviceType();
+
   const [selectedValue, setSelectedValue] = useState(DROPDOWN_OPTIONS[0]);
   const [currentPage, setCurrentPage] = useState(1);
   const [inputValue, setInputValue] = useState("");
   const [searchKeyword, setSearchKeyword] = useState("");
 
-  const pageSize = device === "MOBILE" ? 4 : device === "TABLET" ? 6 : 10;
-  const { products, totalCount, isLoading, error, refetch } = useProducts({
+  const { pageSize, minHeight } = DEVICE_CONFIG[device] ?? DEVICE_CONFIG.PC;
+
+  const { products, totalCount, isLoading, error } = useProducts({
     page: currentPage,
     pageSize: pageSize,
     orderBy: selectedValue.value,
     keyword: searchKeyword,
   });
 
-  const minHeight = device === "MOBILE" ? 668 : device === "TABLET" ? 740 : 674;
-
   const handleSelect = (opt) => {
     setSelectedValue(opt);
     setCurrentPage(1);
-    refetch({
-      page: 1,
-      pageSize: pageSize,
-      orderBy: opt.value,
-      keyword: searchKeyword,
-    });
   };
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
-    refetch({
-      page: newPage,
-      pageSize: pageSize,
-      orderBy: selectedValue.value,
-      keyword: searchKeyword,
-    });
   };
 
   const handleKeywordChange = (e) => {
@@ -65,12 +59,6 @@ function SaleProductList() {
     e.preventDefault();
     setSearchKeyword(inputValue);
     setCurrentPage(1);
-    refetch({
-      page: 1,
-      pageSize: pageSize,
-      orderBy: selectedValue.value,
-      keyword: inputValue,
-    });
   };
 
   const titleElement = (
@@ -79,17 +67,18 @@ function SaleProductList() {
 
   const buttonElement = <Button size="sm40">상품 등록하기</Button>;
 
-  const searchElements = (
+  const searchElement = (
     <form className={styles.searchForm} onSubmit={handleSubmit}>
       <Input
         value={inputValue}
         placeholder="검색할 상품을 입력해주세요"
+        aria-label="상품 검색"
         onChange={handleKeywordChange}
       />
     </form>
   );
 
-  const dropdownElements = (
+  const dropdownElement = (
     <Dropdown
       options={DROPDOWN_OPTIONS}
       selectedValue={selectedValue}
@@ -107,17 +96,17 @@ function SaleProductList() {
               {buttonElement}
             </div>
             <div className={styles.searchWrapper}>
-              {searchElements}
-              {dropdownElements}
+              {searchElement}
+              {dropdownElement}
             </div>
           </>
         ) : (
           <>
             <div className={styles.titleWrapper}>{titleElement}</div>
             <div className={styles.searchWrapper}>
-              {searchElements}
+              {searchElement}
               {buttonElement}
-              {dropdownElements}
+              {dropdownElement}
             </div>
           </>
         )}
