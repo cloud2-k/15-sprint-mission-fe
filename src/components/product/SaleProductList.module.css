@@ -33,6 +33,10 @@
   height: 42px;
 }
 
+.searchForm {
+  width: 100%;
+}
+
 .productList {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

@@ -23,21 +23,27 @@ function SaleProductList() {
   const { device, isMobile } = useDeviceType();
   const [selectedValue, setSelectedValue] = useState(DROPDOWN_OPTIONS[0]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [inputValue, setInputValue] = useState("");
+  const [searchKeyword, setSearchKeyword] = useState("");
+
   const pageSize = device === "MOBILE" ? 4 : device === "TABLET" ? 6 : 10;
   const { products, totalCount, isLoading, error, refetch } = useProducts({
     page: currentPage,
     pageSize: pageSize,
     orderBy: selectedValue.value,
+    keyword: searchKeyword,
   });
 
   const minHeight = device === "MOBILE" ? 668 : device === "TABLET" ? 740 : 674;
 
-  const handleSelect = (value) => {
-    setSelectedValue(value);
+  const handleSelect = (opt) => {
+    setSelectedValue(opt);
+    setCurrentPage(1);
     refetch({
-      page: currentPage,
+      page: 1,
       pageSize: pageSize,
-      orderBy: value.value,
+      orderBy: opt.value,
+      keyword: searchKeyword,
     });
   };
 
@@ -47,6 +53,23 @@ function SaleProductList() {
       page: newPage,
       pageSize: pageSize,
       orderBy: selectedValue.value,
+      keyword: searchKeyword,
+    });
+  };
+
+  const handleKeywordChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSearchKeyword(inputValue);
+    setCurrentPage(1);
+    refetch({
+      page: 1,
+      pageSize: pageSize,
+      orderBy: selectedValue.value,
+      keyword: inputValue,
     });
   };
 
@@ -56,7 +79,15 @@ function SaleProductList() {
 
   const buttonElement = <Button size="sm40">상품 등록하기</Button>;
 
-  const searchElements = <Input placeholder="검색할 상품을 입력해주세요" />;
+  const searchElements = (
+    <form className={styles.searchForm} onSubmit={handleSubmit}>
+      <Input
+        value={inputValue}
+        placeholder="검색할 상품을 입력해주세요"
+        onChange={handleKeywordChange}
+      />
+    </form>
+  );
 
   const dropdownElements = (
     <Dropdown
