@@ -5,6 +5,8 @@ import nextIcon from "../../assets/ic_arrow_right.svg";
 import styles from "./Pagination.module.css";
 
 function Pagination({ totalItems, itemsPerPage, currentPage, onPageChange }) {
+  if (totalItems === 0) return null;
+
   // 한번에 보여줄 페이지 묶음 개수
   const PAGE_GROUP_SIZE = 5;
 
@@ -19,10 +21,10 @@ function Pagination({ totalItems, itemsPerPage, currentPage, onPageChange }) {
   const endPage = Math.min(startPage + PAGE_GROUP_SIZE - 1, totalPages);
 
   // 페이지 배열
-  const pageNumbers = Array.from(
-    { length: PAGE_GROUP_SIZE },
-    (_, i) => i + startPage,
-  );
+  const pageNumbers = [];
+  for (let i = startPage; i <= endPage; i++) {
+    pageNumbers.push(i);
+  }
 
   return (
     <div className={styles.paginationWrapper}>
