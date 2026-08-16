@@ -42,7 +42,7 @@ function Header() {
           </nav>
         </div>
         <div>
-          <Button href="/login" size="sm40">
+          <Button href="/" size="sm40">
             로그인
           </Button>
         </div>
