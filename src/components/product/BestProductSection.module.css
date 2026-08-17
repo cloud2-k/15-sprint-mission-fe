@@ -1,0 +1,49 @@
+/* =========================================
+  1. 기본 스타일(모바일)
+========================================= */
+.bestProduct {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  padding: 16px 0 24px;
+}
+
+.title {
+  color: var(--secondary-900, #111827);
+}
+
+.productList {
+  width: 100%;
+}
+
+/* =========================================
+  2. 태블릿 사이즈 (744px 이상)
+========================================= */
+@media (width >= 744px) {
+  .bestProduct {
+    padding: 24px 0 40px;
+  }
+
+  .productList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+/* =========================================
+  3. PC 사이즈 (1024px 이상)
+========================================= */
+@media (width >= 1024px) {
+  .bestProduct {
+    padding: 26px 0 40px;
+  }
+
+  .productList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}

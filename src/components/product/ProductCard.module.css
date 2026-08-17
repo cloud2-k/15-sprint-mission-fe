@@ -1,0 +1,74 @@
+/* =========================================
+  1. 기본 스타일(모바일)
+========================================= */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+
+.best {
+  gap: 10px;
+}
+
+.cardImageWrapper {
+  width: 100%;
+  height: auto;
+}
+
+.cardImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+  color: var(--secondary-800, #1f2937);
+}
+
+.title {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.heart {
+  display: flex;
+  flex-shrink: 0;
+  gap: 4px;
+  align-items: center;
+  color: var(--secondary-600, #4b5563);
+}
+
+.heartIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* =========================================
+  2. 태블릿 사이즈 (744px 이상)
+========================================= */
+@media (width >= 744px) {
+  /* 필요없으면 삭제 */
+}
+
+/* =========================================
+  3. PC 사이즈 (1024px 이상)
+========================================= */
+@media (width >= 1024px) {
+  .best {
+    gap: 16px;
+  }
+}

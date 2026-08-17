@@ -1,0 +1,68 @@
+/* =========================================
+  1. 기본 스타일(모바일)
+========================================= */
+.dropdownWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownButton {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  background: #fff;
+  border: 1px solid var(--secondary-200, #e5e7eb);
+  border-radius: 12px;
+}
+
+.dropdownList {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 130px;
+  overflow: hidden;
+  border: 1px solid var(--secondary-200, #e5e7eb);
+  border-radius: 12px;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 42px;
+  color: var(--secondary-800, #1f2937);
+  background: #fff;
+  border-bottom: 1px solid var(--secondary-200, #e5e7eb);
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+/* =========================================
+  2. 태블릿 사이즈 (744px 이상)
+========================================= */
+@media (width >= 744px) {
+  .dropdownButton {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 136px;
+    height: 42px;
+    padding: 12px 20px;
+  }
+}
+
+/* =========================================
+  3. PC 사이즈 (1024px 이상) -> 태블릿과 동일
+========================================= */

@@ -1,0 +1,251 @@
+/* 기본 여백 및 박스 사이즈 초기화 */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* 태그 기본 스타일 제거 */
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 폼(Form) 요소 초기화 */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  outline: none;
+  background: transparent;
+  border: none;
+}
+
+/* CSS 변수(Variables) 설정 */
+:root {
+  /* Primary Color */
+  --primary-100: #3692ff;
+  --primary-200: #1967d6;
+  --primary-300: #1251aa;
+
+  /* Error Color */
+  --error-red: #f74747;
+
+  /* Secondary Color (Grays) */
+  --secondary-900: #111827;
+  --secondary-800: #1f2937;
+  --secondary-700: #374151;
+  --secondary-600: #4b5563;
+  --secondary-500: #6b7280;
+  --secondary-400: #9ca3af;
+  --secondary-200: #e5e7eb;
+  --secondary-100: #f3f4f6;
+  --secondary-50: #f9fafb;
+}
+
+/* 기본 폰트 설정 */
+body {
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    "Helvetica Neue",
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    "Malgun Gothic",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    sans-serif;
+  color: var(--secondary-900);
+  background-color: var(--secondary-50);
+}
+
+/* Pretendard 스타일 가이드 */
+
+/* Text-3xl (32px / 42px) */
+.text-3xl-bold {
+  font-size: 32px;
+  font-weight: 700; /* Bold */
+  line-height: 42px;
+}
+
+.text-3xl-semibold {
+  font-size: 32px;
+  font-weight: 600; /* Semibold */
+  line-height: 42px;
+}
+
+/* Text-2xl (24px / 32px) */
+.text-2xl-bold {
+  font-size: 24px;
+  font-weight: 700; /* Bold */
+  line-height: 32px;
+}
+
+.text-2xl-semibold {
+  font-size: 24px;
+  font-weight: 600; /* Semibold */
+  line-height: 32px;
+}
+
+.text-2xl-medium {
+  font-size: 24px;
+  font-weight: 500; /* Medium */
+  line-height: 32px;
+}
+
+.text-2xl-regular {
+  font-size: 24px;
+  font-weight: 400; /* Regular */
+  line-height: 32px;
+}
+
+/* Text-xl (20px / 32px) */
+.text-xl-bold {
+  font-size: 20px;
+  font-weight: 700; /* Bold */
+  line-height: 32px;
+}
+
+.text-xl-semibold {
+  font-size: 20px;
+  font-weight: 600; /* Semibold */
+  line-height: 32px;
+}
+
+.text-xl-medium {
+  font-size: 20px;
+  font-weight: 500; /* Medium */
+  line-height: 32px;
+}
+
+.text-xl-regular {
+  font-size: 20px;
+  font-weight: 400; /* Regular */
+  line-height: 32px;
+}
+
+/* Text-2lg (18px / 26px) */
+.text-2lg-bold {
+  font-size: 18px;
+  font-weight: 700; /* Bold */
+  line-height: 26px;
+}
+
+.text-2lg-semibold {
+  font-size: 18px;
+  font-weight: 600; /* Semibold */
+  line-height: 26px;
+}
+
+.text-2lg-medium {
+  font-size: 18px;
+  font-weight: 500; /* Medium */
+  line-height: 26px;
+}
+
+.text-2lg-regular {
+  font-size: 18px;
+  font-weight: 400; /* Regular */
+  line-height: 26px;
+}
+
+/* Text-lg (16px / 26px) */
+.text-lg-bold {
+  font-size: 16px;
+  font-weight: 700; /* Bold */
+  line-height: 26px;
+}
+
+.text-lg-semibold {
+  font-size: 16px;
+  font-weight: 600; /* Semibold */
+  line-height: 26px;
+}
+
+.text-lg-medium {
+  font-size: 16px;
+  font-weight: 500; /* Medium */
+  line-height: 26px;
+}
+
+.text-lg-regular {
+  font-size: 16px;
+  font-weight: 400; /* Regular */
+  line-height: 26px;
+}
+
+/* Text-md (14px / 24px) */
+.text-md-bold {
+  font-size: 14px;
+  font-weight: 700; /* Bold */
+  line-height: 24px;
+}
+
+.text-md-semibold {
+  font-size: 14px;
+  font-weight: 600; /* Semibold */
+  line-height: 24px;
+}
+
+.text-md-medium {
+  font-size: 14px;
+  font-weight: 500; /* Medium */
+  line-height: 24px;
+}
+
+.text-md-regular {
+  font-size: 14px;
+  font-weight: 400; /* Regular */
+  line-height: 24px;
+}
+
+/* Text-sm (13px / 22px) */
+.text-sm-semibold {
+  font-size: 13px;
+  font-weight: 600; /* Semibold */
+  line-height: 22px;
+}
+
+.text-sm-medium {
+  font-size: 13px;
+  font-weight: 500; /* Medium */
+  line-height: 22px;
+}
+
+/* Text-xs (12px) */
+.text-xs-semibold {
+  font-size: 12px;
+  font-weight: 600; /* Semibold */
+  line-height: 20px;
+}
+
+.text-xs-medium {
+  font-size: 12px;
+  font-weight: 500; /* Medium */
+  line-height: 18px;
+}
+
+.text-xs-regular {
+  font-size: 12px;
+  font-weight: 400; /* Regular */
+  line-height: 18px;
+}

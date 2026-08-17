@@ -1,0 +1,98 @@
+/* ── [기본 베이스] ── */
+.btnBase {
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  color: var(--secondary-100); /* 기본 버튼 컬러(글자색) */
+  white-space: nowrap;
+  text-decoration: none; /* a 태그로 버튼 만들 때 */
+  cursor: pointer;
+  border: none;
+  border-radius: 40px;
+  transition: all 0.2s ease;
+}
+
+/* ── [크기 분류] ── */
+
+/* large (가로 hug / 세로 fixed) */
+.btnLg {
+  height: 56px;
+  padding: 0 124px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+/* medium (가로 fixed / 세로 fixed) */
+.btnMd {
+  width: 240px;
+  height: 48px;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.btnMdIcon {
+  gap: 8px;
+  width: 240px;
+  height: 48px;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  border-radius: 40px;
+}
+
+/* small 40 (가로 hug / 세로 fixed) */
+.btnSm40 {
+  height: 42px;
+  padding: 12px 23px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  border-radius: 8px;
+}
+
+/* small 48 (가로 fixed / 세로 fixed) */
+.btnSm48 {
+  width: 88px;
+  height: 48px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  border-radius: 8px;
+}
+
+/* ── [스타일/컬러 분류] ── */
+
+/* 기본 블루 버튼 */
+.btnPrimary {
+  background-color: var(--primary-100);
+}
+
+.btnPrimary:hover {
+  background-color: var(--primary-200);
+}
+
+.btnPrimary:active {
+  background-color: var(--primary-300);
+}
+
+/* 흰색 버튼(btn-sm-48) */
+.btnOutline {
+  color: var(--primary-100);
+  background-color: var(--secondary-50);
+  border: 1px solid var(--primary-100);
+}
+
+/* 비활성화 버튼 */
+.btnPrimary:disabled,
+.btnDisabled {
+  cursor: not-allowed;
+  background-color: var(--secondary-400);
+}

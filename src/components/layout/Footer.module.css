@@ -1,0 +1,93 @@
+/* =========================================
+  1. 기본 스타일(모바일)
+========================================= */
+.footerWrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  height: 160px;
+  padding: 32px 16px;
+  background: var(--secondary-900, #111827);
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.links {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.pageLinks {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--secondary-200, #e5e7eb);
+  text-align: center;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: 116px;
+}
+
+.copyRight {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--secondary-400, #9ca3af);
+  text-align: center;
+}
+
+/* =========================================
+  2. 태블릿 사이즈 (744px 이상)
+========================================= */
+@media (width >= 744px) {
+  .footerWrapper {
+    padding: 32px 24px;
+  }
+
+  .footerContent {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .socialLinks {
+    flex-shrink: 0;
+  }
+}
+
+/* =========================================
+  3. PC 사이즈 (1024px 이상)
+========================================= */
+@media (width >= 1024px) {
+  .footerWrapper {
+    display: flex;
+    align-items: flex-start;
+    padding: 32px 200px;
+  }
+
+  .footerContent {
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
+    align-self: stretch;
+    justify-content: space-between;
+    max-width: 1520px;
+  }
+}
