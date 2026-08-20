@@ -16,8 +16,8 @@
 }
 
 .input::placeholder {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 26px;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-lg);
   color: var(--secondary-400, #9ca3af);
 }

@@ -54,6 +54,33 @@ select {
   --secondary-200: #e5e7eb;
   --secondary-100: #f3f4f6;
   --secondary-50: #f9fafb;
+
+  /* 폰트 굵기 (Font Weights) */
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+
+  /* 폰트 크기 (Font Sizes) */
+  --font-size-3xl: 32px;
+  --font-size-2xl: 24px;
+  --font-size-xl: 20px;
+  --font-size-2lg: 18px;
+  --font-size-lg: 16px;
+  --font-size-md: 14px;
+  --font-size-sm: 13px;
+  --font-size-xs: 12px;
+
+  /* 줄 간격 (Line Heights) */
+  --line-height-3xl: 42px;
+  --line-height-2xl: 32px;
+  --line-height-xl: 32px;
+  --line-height-2lg: 26px;
+  --line-height-lg: 26px;
+  --line-height-md: 24px;
+  --line-height-sm: 22px;
+  --line-height-xs-semibold: 20px; /* text-xs-semibold */
+  --line-height-xs: 18px; /* text-xs-medium, regular */
 }
 
 /* 기본 폰트 설정 */
@@ -82,170 +109,170 @@ body {
 
 /* Text-3xl (32px / 42px) */
 .text-3xl-bold {
-  font-size: 32px;
-  font-weight: 700; /* Bold */
-  line-height: 42px;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-3xl);
 }
 
 .text-3xl-semibold {
-  font-size: 32px;
-  font-weight: 600; /* Semibold */
-  line-height: 42px;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-3xl);
 }
 
 /* Text-2xl (24px / 32px) */
 .text-2xl-bold {
-  font-size: 24px;
-  font-weight: 700; /* Bold */
-  line-height: 32px;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-2xl);
 }
 
 .text-2xl-semibold {
-  font-size: 24px;
-  font-weight: 600; /* Semibold */
-  line-height: 32px;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-2xl);
 }
 
 .text-2xl-medium {
-  font-size: 24px;
-  font-weight: 500; /* Medium */
-  line-height: 32px;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-2xl);
 }
 
 .text-2xl-regular {
-  font-size: 24px;
-  font-weight: 400; /* Regular */
-  line-height: 32px;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-2xl);
 }
 
 /* Text-xl (20px / 32px) */
 .text-xl-bold {
-  font-size: 20px;
-  font-weight: 700; /* Bold */
-  line-height: 32px;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-xl);
 }
 
 .text-xl-semibold {
-  font-size: 20px;
-  font-weight: 600; /* Semibold */
-  line-height: 32px;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xl);
 }
 
 .text-xl-medium {
-  font-size: 20px;
-  font-weight: 500; /* Medium */
-  line-height: 32px;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xl);
 }
 
 .text-xl-regular {
-  font-size: 20px;
-  font-weight: 400; /* Regular */
-  line-height: 32px;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-xl);
 }
 
 /* Text-2lg (18px / 26px) */
 .text-2lg-bold {
-  font-size: 18px;
-  font-weight: 700; /* Bold */
-  line-height: 26px;
+  font-size: var(--font-size-2lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-2lg);
 }
 
 .text-2lg-semibold {
-  font-size: 18px;
-  font-weight: 600; /* Semibold */
-  line-height: 26px;
+  font-size: var(--font-size-2lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-2lg);
 }
 
 .text-2lg-medium {
-  font-size: 18px;
-  font-weight: 500; /* Medium */
-  line-height: 26px;
+  font-size: var(--font-size-2lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-2lg);
 }
 
 .text-2lg-regular {
-  font-size: 18px;
-  font-weight: 400; /* Regular */
-  line-height: 26px;
+  font-size: var(--font-size-2lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-2lg);
 }
 
 /* Text-lg (16px / 26px) */
 .text-lg-bold {
-  font-size: 16px;
-  font-weight: 700; /* Bold */
-  line-height: 26px;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-lg);
 }
 
 .text-lg-semibold {
-  font-size: 16px;
-  font-weight: 600; /* Semibold */
-  line-height: 26px;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-lg);
 }
 
 .text-lg-medium {
-  font-size: 16px;
-  font-weight: 500; /* Medium */
-  line-height: 26px;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-lg);
 }
 
 .text-lg-regular {
-  font-size: 16px;
-  font-weight: 400; /* Regular */
-  line-height: 26px;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-lg);
 }
 
 /* Text-md (14px / 24px) */
 .text-md-bold {
-  font-size: 14px;
-  font-weight: 700; /* Bold */
-  line-height: 24px;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-md);
 }
 
 .text-md-semibold {
-  font-size: 14px;
-  font-weight: 600; /* Semibold */
-  line-height: 24px;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-md);
 }
 
 .text-md-medium {
-  font-size: 14px;
-  font-weight: 500; /* Medium */
-  line-height: 24px;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-md);
 }
 
 .text-md-regular {
-  font-size: 14px;
-  font-weight: 400; /* Regular */
-  line-height: 24px;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-md);
 }
 
 /* Text-sm (13px / 22px) */
 .text-sm-semibold {
-  font-size: 13px;
-  font-weight: 600; /* Semibold */
-  line-height: 22px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-sm);
 }
 
 .text-sm-medium {
-  font-size: 13px;
-  font-weight: 500; /* Medium */
-  line-height: 22px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-sm);
 }
 
-/* Text-xs (12px) */
+/* Text-xs (12px / 18px or 20px) */
 .text-xs-semibold {
-  font-size: 12px;
-  font-weight: 600; /* Semibold */
-  line-height: 20px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xs-semibold); /* 20px 적용 */
 }
 
 .text-xs-medium {
-  font-size: 12px;
-  font-weight: 500; /* Medium */
-  line-height: 18px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xs); /* 18px 적용 */
 }
 
 .text-xs-regular {
-  font-size: 12px;
-  font-weight: 400; /* Regular */
-  line-height: 18px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-xs); /* 18px 적용 */
 }

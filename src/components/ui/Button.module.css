@@ -21,9 +21,9 @@
 .btnLg {
   height: 56px;
   padding: 0 124px;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 32px;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xl);
 }
 
 /* medium (가로 fixed / 세로 fixed) */
@@ -31,9 +31,9 @@
   width: 240px;
   height: 48px;
   padding: 0;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 26px;
+  font-size: var(--font-size-2lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-2lg);
 }
 
 .btnMdIcon {
@@ -41,9 +41,9 @@
   width: 240px;
   height: 48px;
   padding: 0;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 26px;
+  font-size: var(--font-size-2lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-2lg);
   border-radius: 40px;
 }
 
@@ -51,9 +51,9 @@
 .btnSm40 {
   height: 42px;
   padding: 12px 23px;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 26px;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-lg);
   border-radius: 8px;
 }
 
@@ -62,9 +62,9 @@
   width: 88px;
   height: 48px;
   padding: 0;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 26px;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-lg);
   border-radius: 8px;
 }
 

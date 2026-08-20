@@ -31,9 +31,9 @@
   display: flex;
   gap: 30px;
   align-items: flex-start;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-lg);
   color: var(--secondary-200, #e5e7eb);
   text-align: center;
 }
@@ -46,9 +46,9 @@
 }
 
 .copyRight {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-lg);
   color: var(--secondary-400, #9ca3af);
   text-align: center;
 }
