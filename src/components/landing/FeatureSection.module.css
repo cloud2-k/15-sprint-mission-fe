@@ -1,3 +1,6 @@
+/* =========================================
+  1. 기본 스타일(모바일)
+========================================= */
 .featureContainer {
   width: 100%;
   padding: 52px 16px 80px;
@@ -14,4 +17,36 @@
 
 .pcOnly {
   display: none;
+}
+
+/* =========================================
+  2. 태블릿 사이즈 (744px 이상)
+========================================= */
+@media (width >= 744px) {
+  .featureContainer {
+    padding: 24px 24px 52px;
+  }
+
+  .featureList {
+    gap: 52px;
+  }
+}
+
+/* =========================================
+  3. PC 사이즈 (1024px 이상)
+========================================= */
+@media (width >= 1024px) {
+  .featureContainer {
+    width: 100%;
+    padding: 138px 0;
+    background: #fff;
+  }
+
+  .featureList {
+    gap: 276px;
+  }
+
+  .pcOnly {
+    display: block;
+  }
 }

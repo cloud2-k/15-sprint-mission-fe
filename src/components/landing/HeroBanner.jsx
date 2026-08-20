@@ -25,7 +25,7 @@ const BANNER_DATA = {
     titleTag: "h2",
     title: (
       <>
-        믿을 수 있는 <br className={styles.tabletHidden} /> 판다마켓 중고 거래
+        믿을 수 있는 <br /> 판다마켓 중고 거래
       </>
     ),
     imageUrl: imgHomeBottom,
@@ -46,7 +46,7 @@ function HeroBanner({ position }) {
     <section
       className={clsx(
         styles.bannerContainer,
-        position === "bottom" && styles.bottomPadding,
+        position === "bottom" && styles.bottomContainer,
       )}
     >
       <div className={styles.bannerContent}>

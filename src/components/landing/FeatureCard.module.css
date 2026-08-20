@@ -1,3 +1,6 @@
+/* =========================================
+  1. 기본 스타일(모바일)
+========================================= */
 .card {
   display: flex;
   flex-direction: column;
@@ -57,4 +60,110 @@
 .desc {
   composes: text-lg-medium from "../../index.css";
   color: var(--secondary-700, #374151);
+}
+
+/* =========================================
+  2. 태블릿 사이즈 (744px 이상)
+========================================= */
+@media (width >= 744px) {
+  .imageWrapper {
+    border-radius: 14px;
+  }
+
+  .cardImage {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .textWrapper {
+    gap: 24px;
+  }
+
+  .titleWrapper {
+    gap: 16px;
+  }
+
+  .tag {
+    font-size: var(--font-size-2lg);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-2lg);
+  }
+
+  .title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-3xl);
+  }
+
+  .desc {
+    font-size: var(--font-size-2lg);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-2lg);
+  }
+}
+
+/* =========================================
+  3. PC 사이즈 (1024px 이상)
+========================================= */
+@media (width >= 1024px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    width: 988px;
+    background: #fcfcfc;
+  }
+
+  .reverse {
+    flex-direction: row-reverse;
+  }
+
+  .imageWrapper {
+    border-radius: 12px;
+  }
+
+  .cardImage {
+    display: block;
+    width: 588px;
+    height: 444px;
+  }
+
+  .textWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .titleWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    align-self: stretch;
+  }
+
+  .reverse .textWrapper {
+    align-self: center;
+  }
+
+  .reverse .titleWrapper {
+    align-items: flex-end;
+  }
+
+  .title {
+    font-size: 40px;
+    font-weight: var(--font-weight-bold);
+    line-height: 140%;
+  }
+
+  .desc {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-2xl);
+  }
 }
