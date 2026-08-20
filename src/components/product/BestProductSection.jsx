@@ -2,13 +2,13 @@ import clsx from "clsx";
 
 import { useState } from "react";
 import useProducts from "../../hooks/useProducts";
+import useDeviceType from "../../hooks/useDeviceType";
 
 import ProductCard from "./ProductCard";
 import Spinner from "../ui/Spinner";
 import ErrorView from "../ui/ErrorView";
 
 import styles from "./BestProductSection.module.css";
-import useDeviceType from "../../hooks/useDeviceType";
 
 function BestProductSection() {
   const { products, isLoading, error } = useProducts({

@@ -1,18 +1,16 @@
 import { Outlet } from "react-router-dom";
-
 import Header from "./Header";
-import MainContent from "./MainContent";
 import Footer from "./Footer";
 
-function Layout() {
+function LandingLayout() {
   return (
     <>
       <Header />
-      <MainContent>
+      <main>
         <Outlet />
-      </MainContent>
+      </main>
       <Footer />
     </>
   );
 }
-export default Layout;
+export default LandingLayout;

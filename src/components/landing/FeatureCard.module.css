@@ -1,0 +1,60 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  align-self: stretch;
+  background: #fcfcfc;
+}
+
+.imageWrapper {
+  overflow: hidden;
+  background: var(--secondary-100, #f3f4f6);
+  border-radius: 7px;
+}
+
+.cardImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.reverse .textWrapper {
+  align-items: flex-end;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.reverse .titleWrapper {
+  align-items: flex-end;
+}
+
+.tag {
+  composes: text-lg-bold from "../../index.css";
+  color: var(--primary-100, #3692ff);
+}
+
+.title {
+  composes: text-2xl-bold from "../../index.css";
+  color: var(--secondary-700, #374151);
+}
+
+.desc {
+  composes: text-lg-medium from "../../index.css";
+  color: var(--secondary-700, #374151);
+}

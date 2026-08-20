@@ -1,0 +1,17 @@
+.featureContainer {
+  width: 100%;
+  padding: 52px 16px 80px;
+  background: #fcfcfc;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pcOnly {
+  display: none;
+}

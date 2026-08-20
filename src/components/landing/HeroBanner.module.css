@@ -1,0 +1,52 @@
+.bannerContainer {
+  width: 100%;
+  height: 540px;
+  background: #cfe5ff;
+}
+
+.bannerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 48px;
+}
+
+.bottomPadding {
+  padding-top: 120px;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  width: 240px;
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 140%;
+  color: var(--secondary-700, #374151);
+  text-align: center;
+}
+
+.tabletHidden {
+  display: block;
+}
+
+.imageTop {
+  display: block;
+  width: 100%;
+  height: 204px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageBottom {
+  display: block;
+  width: 100%;
+  height: auto;
+}
