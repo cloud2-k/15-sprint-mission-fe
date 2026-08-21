@@ -5,7 +5,7 @@ import useDeviceType from "../../hooks/useDeviceType";
 import useProducts from "../../hooks/useProducts";
 
 import Button from "../ui/Button";
-import Input from "../ui/Input";
+import SearchInput from "../ui/SearchInput";
 import ProductCard from "./ProductCard";
 import Dropdown from "../ui/Dropdown";
 import Pagination from "../ui/Pagination";
@@ -69,7 +69,7 @@ function SaleProductList() {
 
   const searchElement = (
     <form className={styles.searchForm} onSubmit={handleSubmit}>
-      <Input
+      <SearchInput
         value={inputValue}
         placeholder="검색할 상품을 입력해주세요"
         aria-label="상품 검색"
