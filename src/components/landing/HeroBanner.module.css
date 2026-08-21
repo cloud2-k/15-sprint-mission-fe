@@ -31,7 +31,7 @@
 .title {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
-  line-height: 140%;
+  line-height: 1.4;
   color: var(--secondary-700, #374151);
   text-align: center;
 }
