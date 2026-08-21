@@ -2,6 +2,10 @@
   1. 기본 스타일(모바일)
 ========================================= */
 .headerWrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
   display: flex;
   justify-content: center;
   width: 100%;
