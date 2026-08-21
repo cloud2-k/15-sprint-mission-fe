@@ -1,3 +1,6 @@
+/* =========================================
+  1. 기본 스타일(모바일) -> 태블릿, PC 동일
+========================================= */
 .inputContainer {
   display: flex;
   flex-direction: column;
@@ -30,15 +33,15 @@
   border-radius: 12px;
 }
 
-.input.error {
-  border: 1px solid var(--error-red, #f74747);
-}
-
 .input::placeholder {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-lg);
   color: var(--secondary-400, #9ca3af);
+}
+
+.input.error {
+  border: 1px solid var(--error-red, #f74747);
 }
 
 .errorMessage {

@@ -92,7 +92,7 @@ function ProductForm() {
           등록
         </Button>
       </div>
-      <div className={styles.formWrapper}>
+      <div className={styles.contentWrapper}>
         <Input
           label="상품명"
           id="productName"
@@ -116,14 +116,16 @@ function ProductForm() {
           onWheel={(e) => e.target.blur()}
           {...register("price")}
         />
-        <Input
-          label="태그"
-          id="productTag"
-          placeholder="태그를 입력해 주세요"
-          onKeyDown={handleTagKeyDown}
-          error={errors.tags}
-        />
-        <ProductTagList tags={currentTags} onRemove={removeTag} />
+        <div className={styles.tagInputSection}>
+          <Input
+            label="태그"
+            id="productTag"
+            placeholder="태그를 입력해 주세요"
+            onKeyDown={handleTagKeyDown}
+            error={errors.tags}
+          />
+          <ProductTagList tags={currentTags} onRemove={removeTag} />
+        </div>
       </div>
     </form>
   );
