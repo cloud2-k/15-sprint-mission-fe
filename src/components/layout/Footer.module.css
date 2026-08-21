@@ -88,6 +88,6 @@
     align-items: center;
     align-self: stretch;
     justify-content: space-between;
-    max-width: 1520px;
+    width: 100%;
   }
 }
