@@ -29,6 +29,9 @@ input,
 textarea,
 select {
   font-family: inherit;
+  font-size: inherit;
+  line-height: 1.4;
+  color: inherit;
   outline: none;
   background: transparent;
   border: none;

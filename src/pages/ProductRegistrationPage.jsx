@@ -1,6 +1,10 @@
+import ProductForm from "../components/product/ProductForm";
+
 function ProductRegistrationPage() {
   return (
-    <div>ProductRegistrationPage</div>
-  )
+    <>
+      <ProductForm />
+    </>
+  );
 }
-export default ProductRegistrationPage
+export default ProductRegistrationPage;
