@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import * as z from "zod";
 
 import Button from "../ui/Button";
@@ -35,7 +35,7 @@ function ProductForm() {
     register,
     handleSubmit,
     setValue,
-    watch,
+    control,
     setError,
     clearErrors,
     formState: { errors, isValid },
@@ -47,7 +47,11 @@ function ProductForm() {
     },
   });
 
-  const currentTags = watch("tags");
+  const currentTags = useWatch({
+    control,
+    name: "tags",
+    defaultValue: [],
+  });
 
   const handleTagKeyDown = (e) => {
     if (e.nativeEvent.isComposing) {
@@ -68,7 +72,7 @@ function ProductForm() {
         return;
       }
       clearErrors("tags");
-      setValue("tags", [...currentTags, newTag]);
+      setValue("tags", [...currentTags, newTag], { shouldValidate: true });
       e.target.value = "";
     } else {
       e.target.value = "";
@@ -77,7 +81,7 @@ function ProductForm() {
 
   const removeTag = (tagToRemove) => {
     const filteredTags = currentTags.filter((tag) => tag !== tagToRemove);
-    setValue("tags", filteredTags);
+    setValue("tags", filteredTags, { shouldValidate: true });
   };
 
   const onSubmit = (data) => {
