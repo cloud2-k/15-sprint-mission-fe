@@ -1,8 +1,10 @@
 import useDeviceType from "../../hooks/useDeviceType";
+
 import facebookIcon from "../../assets/ic_facebook.svg";
+import instagramIcon from "../../assets/ic_instagram.svg";
 import twitterIcon from "../../assets/ic_twitter.svg";
 import youtubeIcon from "../../assets/ic_youtube.svg";
-import instagramIcon from "../../assets/ic_instagram.svg";
+
 import styles from "./Footer.module.css";
 
 function Footer() {
@@ -17,16 +19,16 @@ function Footer() {
   const socialLinksBlock = (
     <div className={styles.socialLinks}>
       <a href="https://www.facebook.com/" target="_blank">
-        <img src={facebookIcon} alt="페이스북 아이콘" />
+        <img alt="페이스북 아이콘" src={facebookIcon} />
       </a>
       <a href="https://x.com/" target="_blank">
-        <img src={twitterIcon} alt="트위터 아이콘" />
+        <img alt="트위터 아이콘" src={twitterIcon} />
       </a>
       <a href="https://www.youtube.com/" target="_blank">
-        <img src={youtubeIcon} alt="유튜브 아이콘" />
+        <img alt="유튜브 아이콘" src={youtubeIcon} />
       </a>
       <a href="https://www.instagram.com/" target="_blank">
-        <img src={instagramIcon} alt="인스타그램 아이콘" />
+        <img alt="인스타그램 아이콘" src={instagramIcon} />
       </a>
     </div>
   );

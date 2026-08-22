@@ -1,4 +1,5 @@
 import clsx from "clsx";
+
 import styles from "./Button.module.css";
 
 function Button({
@@ -39,8 +40,8 @@ function Button({
   // href 값이 없다면 <button> 태그로 렌더링
   return (
     <button
-      className={buttonClass}
       disabled={isDisabled}
+      className={buttonClass}
       onClick={onClick}
       {...rest}
     >

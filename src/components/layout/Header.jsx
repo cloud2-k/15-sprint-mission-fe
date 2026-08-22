@@ -1,8 +1,12 @@
 import clsx from "clsx";
+
 import useDeviceType from "../../hooks/useDeviceType";
+
 import Button from "../ui/Button";
-import logoPc from "../../assets/img_logo_pc.svg";
+
 import logoMo from "../../assets/img_logo_mo.svg";
+import logoPc from "../../assets/img_logo_pc.svg";
+
 import styles from "./Header.module.css";
 
 function Header() {
@@ -15,8 +19,8 @@ function Header() {
         <div className={styles.gnbNav}>
           <a href="/" className={styles.logoWrapper}>
             <img
-              src={logoImg}
               alt="판다마켓 로고 이미지"
+              src={logoImg}
               className={styles.logoImage}
             />
           </a>

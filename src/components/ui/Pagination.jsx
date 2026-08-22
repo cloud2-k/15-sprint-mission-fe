@@ -1,4 +1,5 @@
 import clsx from "clsx";
+
 import prevIcon from "../../assets/ic_arrow_left.svg";
 import nextIcon from "../../assets/ic_arrow_right.svg";
 
@@ -30,9 +31,9 @@ function Pagination({ totalItems, itemsPerPage, currentPage, onPageChange }) {
     <div className={styles.paginationWrapper}>
       <div className={styles.paginationContent}>
         <button
+          disabled={startPage === 1}
           className={styles.pageButton}
           onClick={() => onPageChange(startPage - 1)}
-          disabled={startPage === 1}
         >
           <img src={prevIcon} />
         </button>
@@ -49,9 +50,9 @@ function Pagination({ totalItems, itemsPerPage, currentPage, onPageChange }) {
         ))}
 
         <button
+          disabled={endPage === totalPages}
           className={styles.pageButton}
           onClick={() => onPageChange(endPage + 1)}
-          disabled={endPage === totalPages}
         >
           <img src={nextIcon} />
         </button>

@@ -1,12 +1,12 @@
 import clsx from "clsx";
-
 import { useState } from "react";
-import useProducts from "../../hooks/useProducts";
-import useDeviceType from "../../hooks/useDeviceType";
 
-import ProductCard from "./ProductCard";
-import Spinner from "../ui/Spinner";
+import useDeviceType from "../../hooks/useDeviceType";
+import useProducts from "../../hooks/useProducts";
+
 import ErrorView from "../ui/ErrorView";
+import Spinner from "../ui/Spinner";
+import ProductCard from "./ProductCard";
 
 import styles from "./BestProductSection.module.css";
 
@@ -32,7 +32,7 @@ function BestProductSection() {
       {isLoading ? (
         <Spinner minHeight={minHeight} />
       ) : error ? (
-        <ErrorView minHeight={minHeight} message={error} />
+        <ErrorView message={error} minHeight={minHeight} />
       ) : (
         <ul className={styles.productList}>
           {displayProducts.map((product) => (

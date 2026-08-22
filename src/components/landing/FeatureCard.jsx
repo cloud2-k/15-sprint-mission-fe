@@ -6,7 +6,7 @@ function FeatureCard({ reverse, imageUrl, imageAlt, tag, title, description }) {
   return (
     <li className={clsx(styles.card, reverse && styles.reverse)}>
       <div className={styles.imageWrapper}>
-        <img src={imageUrl} alt={imageAlt} className={styles.cardImage} />
+        <img alt={imageAlt} src={imageUrl} className={styles.cardImage} />
       </div>
       <div className={styles.textWrapper}>
         <div className={styles.titleWrapper}>

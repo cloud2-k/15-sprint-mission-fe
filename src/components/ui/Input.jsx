@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { forwardRef } from "react";
+
 import styles from "./Input.module.css";
 
 function Input({ label, id, error, ...rest }, ref) {

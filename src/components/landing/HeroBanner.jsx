@@ -4,8 +4,8 @@ import useDeviceType from "../../hooks/useDeviceType";
 
 import Button from "../ui/Button";
 
-import imgHomeTop from "../../assets/img_home_top.png";
 import imgHomeBottom from "../../assets/img_home_bottom.png";
+import imgHomeTop from "../../assets/img_home_top.png";
 
 import styles from "./HeroBanner.module.css";
 
@@ -53,15 +53,15 @@ function HeroBanner({ position }) {
         <div className={styles.textContent}>
           <TitleTag className={styles.title}>{data.title}</TitleTag>
           {data.hasButton && (
-            <Button size={buttonSize} href="/items">
+            <Button href="/items" size={buttonSize}>
               구경하러 가기
             </Button>
           )}
         </div>
         <div className={styles.imageContent}>
           <img
-            src={data.imageUrl}
             alt={data.imageAlt}
+            src={data.imageUrl}
             className={
               position === "top" ? styles.imageTop : styles.imageBottom
             }

@@ -1,6 +1,6 @@
-import * as z from "zod";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 
 import Button from "../ui/Button";
 import Input from "../ui/Input";
@@ -88,41 +88,41 @@ function ProductForm() {
     <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.headWrapper}>
         <h1 className={styles.formTitle}>상품 등록하기</h1>
-        <Button size="sm40" isDisabled={!isValid}>
+        <Button isDisabled={!isValid} size="sm40">
           등록
         </Button>
       </div>
       <div className={styles.contentWrapper}>
         <Input
-          label="상품명"
           id="productName"
+          label="상품명"
           placeholder="상품명을 입력해 주세요"
           {...register("name")}
           error={errors.name}
         />
         <Textarea
-          label="상품 소개"
           id="productDesc"
+          label="상품 소개"
           placeholder="상품 소개를 입력해 주세요"
           {...register("description")}
           error={errors.description}
         />
         <Input
-          label="판매가격"
           id="productPrice"
+          error={errors.price}
+          label="판매가격"
           placeholder="판매가격을 입력해 주세요"
           type="number"
-          error={errors.price}
           onWheel={(e) => e.target.blur()}
           {...register("price")}
         />
         <div className={styles.tagInputSection}>
           <Input
-            label="태그"
             id="productTag"
+            error={errors.tags}
+            label="태그"
             placeholder="태그를 입력해 주세요"
             onKeyDown={handleTagKeyDown}
-            error={errors.tags}
           />
           <ProductTagList tags={currentTags} onRemove={removeTag} />
         </div>

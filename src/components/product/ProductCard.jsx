@@ -17,10 +17,10 @@ function ProductCard({ item, varient }) {
       {/* 이미지 영역 */}
       <div className={styles.cardImageWrapper}>
         <img
-          src={imgUrl}
           alt={item.name}
-          onError={handleImageError}
+          src={imgUrl}
           className={styles.cardImage}
+          onError={handleImageError}
         />
       </div>
       {/* 컨텐츠 영역 */}
@@ -32,8 +32,8 @@ function ProductCard({ item, varient }) {
         </div>
         <div className={clsx(styles.heart, "text-xs-medium")}>
           <img
-            src={heartIcon}
             alt="하트모양 좋아요 아이콘"
+            src={heartIcon}
             className={styles.heartIcon}
           />
           <span>{item.favoriteCount}</span>

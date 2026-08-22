@@ -1,4 +1,5 @@
 import deleteIcon from "../../assets/ic_delete.svg";
+
 import styles from "./ProductTagList.module.css";
 
 function ProductTagList({ tags, onRemove }) {
@@ -7,10 +8,10 @@ function ProductTagList({ tags, onRemove }) {
   return (
     <ul className={styles.tagList}>
       {tags.map((tag) => (
-        <li className={styles.tagChip} key={tag}>
+        <li key={tag} className={styles.tagChip}>
           <span className={styles.tagText}>#{tag}</span>
           <button type="button" onClick={() => onRemove(tag)}>
-            <img src={deleteIcon} alt="태그 삭제 버튼 아이콘" />
+            <img alt="태그 삭제 버튼 아이콘" src={deleteIcon} />
           </button>
         </li>
       ))}

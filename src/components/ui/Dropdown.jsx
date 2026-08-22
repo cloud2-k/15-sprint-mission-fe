@@ -1,10 +1,10 @@
-import { useState } from "react";
 import clsx from "clsx";
+import { useState } from "react";
 
 import useDeviceType from "../../hooks/useDeviceType";
 
-import mobileIcon from "../../assets/ic_sort.svg";
 import pcIcon from "../../assets/ic_arrow_down.svg";
+import mobileIcon from "../../assets/ic_sort.svg";
 
 import styles from "./Dropdown.module.css";
 
@@ -25,7 +25,7 @@ function Dropdown({ options, selectedValue, onSelect }) {
           {!isMobile && (
             <span className="text-lg-regular">{selectedValue.label}</span>
           )}
-          <img src={isMobile ? mobileIcon : pcIcon} alt="정렬" />
+          <img alt="정렬" src={isMobile ? mobileIcon : pcIcon} />
         </div>
       </button>
       {isOpen && (

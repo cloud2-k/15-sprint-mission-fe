@@ -1,18 +1,18 @@
 import clsx from "clsx";
-
 import { useState } from "react";
+
 import useDeviceType from "../../hooks/useDeviceType";
 import useProducts from "../../hooks/useProducts";
 
 import Button from "../ui/Button";
-import SearchInput from "../ui/SearchInput";
-import ProductCard from "./ProductCard";
 import Dropdown from "../ui/Dropdown";
+import ErrorView from "../ui/ErrorView";
 import Pagination from "../ui/Pagination";
+import SearchInput from "../ui/SearchInput";
+import Spinner from "../ui/Spinner";
+import ProductCard from "./ProductCard";
 
 import styles from "./SaleProductList.module.css";
-import Spinner from "../ui/Spinner";
-import ErrorView from "../ui/ErrorView";
 
 const DROPDOWN_OPTIONS = [
   { value: "recent", label: "최신순" },
@@ -70,9 +70,9 @@ function SaleProductList() {
   const searchElement = (
     <form className={styles.searchForm} onSubmit={handleSubmit}>
       <SearchInput
-        value={inputValue}
-        placeholder="검색할 상품을 입력해주세요"
         aria-label="상품 검색"
+        placeholder="검색할 상품을 입력해주세요"
+        value={inputValue}
         onChange={handleKeywordChange}
       />
     </form>
@@ -114,7 +114,7 @@ function SaleProductList() {
       {isLoading ? (
         <Spinner minHeight={minHeight} />
       ) : error ? (
-        <ErrorView minHeight={minHeight} message={error} />
+        <ErrorView message={error} minHeight={minHeight} />
       ) : (
         <ul className={styles.productList}>
           {products.map((product) => (
@@ -123,9 +123,9 @@ function SaleProductList() {
         </ul>
       )}
       <Pagination
-        totalItems={totalCount}
-        itemsPerPage={pageSize}
         currentPage={currentPage}
+        itemsPerPage={pageSize}
+        totalItems={totalCount}
         onPageChange={handlePageChange}
       />
     </section>

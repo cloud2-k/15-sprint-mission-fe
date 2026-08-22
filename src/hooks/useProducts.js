@@ -1,6 +1,7 @@
 // @ts-check
 
 import { useState, useEffect } from "react";
+
 import { getProducts } from "../api/product";
 
 /**

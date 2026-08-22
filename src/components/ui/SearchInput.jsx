@@ -1,14 +1,15 @@
 import searchIcon from "../../assets/ic_search.svg";
+
 import styles from "./SearchInput.module.css";
 
 function SearchInput({ value, placeholder, ...rest }) {
   return (
     <div className={styles.inputWrapper}>
-      <img src={searchIcon} alt="장식용 돋보기 아이콘" />
+      <img alt="장식용 돋보기 아이콘" src={searchIcon} />
       <input
-        className={styles.input}
-        value={value}
         placeholder={placeholder}
+        value={value}
+        className={styles.input}
         {...rest}
       />
     </div>
