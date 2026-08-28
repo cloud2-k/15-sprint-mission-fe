@@ -1,7 +1,9 @@
 import clsx from "clsx";
+import { Link, NavLink } from "react-router-dom";
 
 import useDeviceType from "../../hooks/useDeviceType";
 
+import { ROUTES } from "../../constants/routes";
 import Button from "../ui/Button";
 
 import logoMo from "../../assets/img_logo_mo.svg";
@@ -17,36 +19,42 @@ function Header() {
     <header className={styles.headerWrapper}>
       <div className={styles.headerContent}>
         <div className={styles.gnbNav}>
-          <a href="/" className={styles.logoWrapper}>
+          <Link to={ROUTES.HOME} className={styles.logoWrapper}>
             <img
               alt="판다마켓 로고 이미지"
               src={logoImg}
               className={styles.logoImage}
             />
-          </a>
+          </Link>
           <nav className={styles.navLinks}>
-            <a
-              href="/"
-              className={clsx(
-                styles.navLink,
-                isMobile ? "text-lg-bold" : "text-2lg-bold",
-              )}
+            <NavLink
+              to={ROUTES.FREEBOARD}
+              className={({ isActive }) =>
+                clsx(
+                  isMobile ? "text-lg-bold" : "text-2lg-bold",
+                  styles.navLink,
+                  isActive && styles.active,
+                )
+              }
             >
               자유게시판
-            </a>
-            <a
-              href="/"
-              className={clsx(
-                styles.navLink,
-                isMobile ? "text-lg-bold" : "text-2lg-bold",
-              )}
+            </NavLink>
+            <NavLink
+              to={ROUTES.ITEMS}
+              className={({ isActive }) =>
+                clsx(
+                  isMobile ? "text-lg-bold" : "text-2lg-bold",
+                  styles.navLink,
+                  isActive && styles.active,
+                )
+              }
             >
               중고마켓
-            </a>
+            </NavLink>
           </nav>
         </div>
         <div>
-          <Button href="/" size="sm40">
+          <Button size="sm40" to={ROUTES.LOGIN}>
             로그인
           </Button>
         </div>

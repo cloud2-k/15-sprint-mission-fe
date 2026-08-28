@@ -1,4 +1,8 @@
+import { Link } from "react-router-dom";
+
 import useDeviceType from "../../hooks/useDeviceType";
+
+import { ROUTES } from "../../constants/routes";
 
 import facebookIcon from "../../assets/ic_facebook.svg";
 import instagramIcon from "../../assets/ic_instagram.svg";
@@ -12,22 +16,34 @@ function Footer() {
 
   const pageLinksBlock = (
     <div className={styles.pageLinks}>
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/faq">FAQ</a>
+      <Link to={ROUTES.PRIVACY}>Privacy Policy</Link>
+      <Link to={ROUTES.FAQ}>FAQ</Link>
     </div>
   );
   const socialLinksBlock = (
     <div className={styles.socialLinks}>
-      <a href="https://www.facebook.com/" target="_blank">
+      <a
+        href="https://www.facebook.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         <img alt="페이스북 아이콘" src={facebookIcon} />
       </a>
-      <a href="https://x.com/" target="_blank">
+      <a href="https://x.com/" rel="noopener noreferrer" target="_blank">
         <img alt="트위터 아이콘" src={twitterIcon} />
       </a>
-      <a href="https://www.youtube.com/" target="_blank">
+      <a
+        href="https://www.youtube.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         <img alt="유튜브 아이콘" src={youtubeIcon} />
       </a>
-      <a href="https://www.instagram.com/" target="_blank">
+      <a
+        href="https://www.instagram.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         <img alt="인스타그램 아이콘" src={instagramIcon} />
       </a>
     </div>

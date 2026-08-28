@@ -2,6 +2,7 @@ import clsx from "clsx";
 
 import useDeviceType from "../../hooks/useDeviceType";
 
+import { ROUTES } from "../../constants/routes";
 import Button from "../ui/Button";
 
 import imgHomeBottom from "../../assets/img_home_bottom.png";
@@ -53,7 +54,7 @@ function HeroBanner({ position }) {
         <div className={styles.textContent}>
           <TitleTag className={styles.title}>{data.title}</TitleTag>
           {data.hasButton && (
-            <Button href="/items" size={buttonSize}>
+            <Button size={buttonSize} to={ROUTES.ITEMS}>
               구경하러 가기
             </Button>
           )}

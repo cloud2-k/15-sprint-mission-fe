@@ -6,16 +6,29 @@ import LandingPage from "./pages/LandingPage";
 import ProductRegistrationPage from "./pages/ProductRegistrationPage";
 import UsedProductsPage from "./pages/UsedProductsPage";
 
+import { ROUTES } from "./constants/routes";
+
 const router = createBrowserRouter([
   {
     element: <LandingLayout />,
-    children: [{ path: "/", element: <LandingPage /> }],
+    children: [{ path: ROUTES.HOME, element: <LandingPage /> }],
   },
   {
     element: <Layout />,
     children: [
-      { path: "/items", element: <UsedProductsPage /> },
-      { path: "/registration", element: <ProductRegistrationPage /> },
+      { path: ROUTES.ITEMS, element: <UsedProductsPage /> },
+      {
+        path: ROUTES.PRODUCT_REGISTRATION,
+        element: <ProductRegistrationPage />,
+      },
+      { path: ROUTES.PRIVACY, element: <></> },
+      { path: ROUTES.FAQ, element: <></> },
+      { path: ROUTES.FREEBOARD, element: <></> },
+      {
+        path: ROUTES.ITEM_DETAIL,
+        element: <></>,
+      },
+      { path: ROUTES.LOGIN, element: <></> },
     ],
   },
 ]);

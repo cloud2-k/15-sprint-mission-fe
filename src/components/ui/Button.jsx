@@ -1,9 +1,11 @@
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
 import styles from "./Button.module.css";
 
 function Button({
   href,
+  to,
   size = "md",
   color = "primary",
   isDisabled = false,
@@ -37,7 +39,16 @@ function Button({
     );
   }
 
-  // href 값이 없다면 <button> 태그로 렌더링
+  // to 값이 전달되면 <Link> 태그로 렌더링
+  if (to) {
+    return (
+      <Link to={to} className={buttonClass} {...rest}>
+        {children}
+      </Link>
+    );
+  }
+
+  // href, to 값이 없다면 <button> 태그로 렌더링
   return (
     <button
       disabled={isDisabled}
