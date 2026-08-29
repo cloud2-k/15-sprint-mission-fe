@@ -7,8 +7,7 @@ import { getProducts } from "../api/product";
 /**
  * @typedef {Object} UseProductsParams
  * @property {number} [page=1] - 페이지 번호
- * @property {number} [pageSize=10] - 한 페이지당 상품 수
- * @property {string} [orderBy="recent"] - 정렬 기준 ("recent" | "favorite")
+ * @property {number} [limit=10] - 한 페이지당 상품 수
  * @property {string} [keyword=""] - 검색 키워드
  */
 
@@ -27,12 +26,7 @@ import { getProducts } from "../api/product";
  * @param {UseProductsParams} [params={}] - API 요청에 필요한 쿼리 파라미터
  * @returns {UseProductsReturn} 컴포넌트에서 사용할 수 있는 상태값
  */
-const useProducts = ({
-  page = 1,
-  pageSize = 10,
-  orderBy = "recent",
-  keyword = "",
-} = {}) => {
+const useProducts = ({ page = 1, limit = 10, keyword = "" } = {}) => {
   const [products, setProducts] = useState(
     /** @type {import('../api/product').Product[]} */ ([]),
   );
@@ -47,10 +41,10 @@ const useProducts = ({
       try {
         setIsLoading(true);
         setError("");
-        const data = await getProducts({ page, pageSize, orderBy, keyword });
+        const res = await getProducts({ page, limit, keyword });
         if (!ignore) {
-          setProducts(data?.list || []);
-          setTotalCount(data?.totalCount || 0);
+          setProducts(res?.data.items || []);
+          setTotalCount(res?.data.pagination.totalCount || 0);
         }
       } catch (error) {
         if (ignore) return;
@@ -78,7 +72,7 @@ const useProducts = ({
     return () => {
       ignore = true;
     };
-  }, [page, pageSize, orderBy, keyword]);
+  }, [page, limit, keyword]);
 
   return {
     products,
