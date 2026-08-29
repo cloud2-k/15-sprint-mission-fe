@@ -4,6 +4,7 @@ import { useState } from "react";
 import useDeviceType from "../../hooks/useDeviceType";
 import useProducts from "../../hooks/useProducts";
 
+import { ROUTES } from "../../constants/routes";
 import Button from "../ui/Button";
 import Dropdown from "../ui/Dropdown";
 import ErrorView from "../ui/ErrorView";
@@ -65,7 +66,11 @@ function SaleProductList() {
     <h2 className={clsx(styles.title, "text-xl-bold")}>판매 중인 상품</h2>
   );
 
-  const buttonElement = <Button size="sm40">상품 등록하기</Button>;
+  const buttonElement = (
+    <Button size="sm40" to={ROUTES.PRODUCT_REGISTRATION}>
+      상품 등록하기
+    </Button>
+  );
 
   const searchElement = (
     <form className={styles.searchForm} onSubmit={handleSubmit}>
