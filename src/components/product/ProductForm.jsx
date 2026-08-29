@@ -1,6 +1,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import * as z from "zod";
+
+import { createProduct } from "../../api/product";
 
 import Button from "../ui/Button";
 import Input from "../ui/Input";
@@ -31,6 +35,10 @@ const formSchema = z.object({
 });
 
 function ProductForm() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -84,15 +92,35 @@ function ProductForm() {
     setValue("tags", filteredTags, { shouldValidate: true });
   };
 
-  const onSubmit = (data) => {
-    console.log("최종 제출 데이터:", data);
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    try {
+      const result = await createProduct(data);
+      navigate(`/items/${result.data.id}`);
+    } catch (error) {
+      const err = /** @type {import('axios').AxiosError<any>} */ (error);
+
+      if (err.response) {
+        setError(err.response.data.message);
+        console.error(
+          "❌ product 생성 API 에러 발생: ",
+          err.response.status,
+          err.response.data,
+        );
+      } else {
+        setError("product API 생성 리퀘스트에 실패하였습니다.");
+        console.error("❌ product 생성 API 에러 발생: 리퀘스트 실패");
+      }
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.headWrapper}>
         <h1 className={styles.formTitle}>상품 등록하기</h1>
-        <Button isDisabled={!isValid} size="sm40">
+        <Button isDisabled={!isValid || isLoading} size="sm40">
           등록
         </Button>
       </div>

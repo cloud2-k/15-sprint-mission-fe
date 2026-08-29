@@ -4,10 +4,13 @@ import { apiClient } from "./client.js";
 
 /**
  * @typedef {Object} Product
- * @property {number} id - 상품 고유 ID
+ * @property {string} id - 상품 고유 ID
  * @property {string} name - 상품 이름
+ * @property {string} [description] - 상품 설명
  * @property {number} price - 상품 가격
+ * @property {string[]} [tags] - 상품 태그 배열
  * @property {string} createdAt - 상품 등록일시 (ISO 8601 형식)
+ * @property {string} [updatedAt] - 상품 수정일시 (ISO 8601 형식)
  */
 
 /**
@@ -34,3 +37,26 @@ export async function getProducts(params = {}) {
   const res = await apiClient.get(`/products`, { params });
   return res.data;
 }
+
+/**
+ * @typedef {Object} CreateProductPayload
+ * @property {string} name - 상품 이름
+ * @property {string} description - 상품 설명
+ * @property {number} price - 상품 가격
+ * @property {string[]} tags - 상품 태그 배열
+ *
+ * @typedef {Object} CreateProductResponse
+ * @property {boolean} success - API 요청 성공 여부
+ * @property {string} message - 응답 결과 메시지
+ * @property {Product} data - 등록 완료된 상품 데이터
+ */
+
+/**
+ * product를 생성합니다.
+ * @param {CreateProductPayload} productData - 등록할 상품 데이터
+ * @returns {Promise<CreateProductResponse>} API 응답 결과
+ */
+export const createProduct = async (productData) => {
+  const res = await apiClient.post("/products", productData);
+  return res.data;
+};
