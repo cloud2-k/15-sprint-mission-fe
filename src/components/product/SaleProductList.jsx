@@ -31,14 +31,22 @@ function SaleProductList() {
 
   const [selectedValue, setSelectedValue] = useState(DROPDOWN_OPTIONS[0]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [prevPageSize, setPrevPageSize] = useState(null);
   const [inputValue, setInputValue] = useState("");
   const [searchKeyword, setSearchKeyword] = useState("");
 
   const { pageSize, minHeight } = DEVICE_CONFIG[device] ?? DEVICE_CONFIG.PC;
 
+  if (prevPageSize !== pageSize) {
+    setPrevPageSize(pageSize);
+    if (prevPageSize !== null) {
+      setCurrentPage(1);
+    }
+  }
+
   const { products, totalCount, isLoading, error } = useProducts({
     page: currentPage,
-    pageSize: pageSize,
+    limit: pageSize,
     orderBy: selectedValue.value,
     keyword: searchKeyword,
   });

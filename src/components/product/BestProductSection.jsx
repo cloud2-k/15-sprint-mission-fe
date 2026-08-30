@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { useState } from "react";
 
 import useDeviceType from "../../hooks/useDeviceType";
 
@@ -42,13 +41,10 @@ function BestProductSection() {
 
   const { device } = useDeviceType();
 
-  const [displayCount] = useState(
-    device === "MOBILE" ? 1 : device === "TABLET" ? 2 : 4,
-  );
+  const displayCount = device === "MOBILE" ? 1 : device === "TABLET" ? 2 : 4;
+  const minHeight = device === "PC" ? 378 : 434;
 
   const displayProducts = products.slice(0, displayCount);
-
-  const minHeight = device === "PC" ? 378 : 434;
 
   return (
     <section className={styles.bestProduct}>
