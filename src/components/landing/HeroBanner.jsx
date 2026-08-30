@@ -40,7 +40,6 @@ function HeroBanner({ position }) {
   const TitleTag = data.titleTag;
 
   const { device } = useDeviceType();
-  console.log("device", device);
   const buttonSize = device === "MOBILE" ? "md" : "lg";
 
   return (
