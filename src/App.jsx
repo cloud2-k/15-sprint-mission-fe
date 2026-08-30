@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import GlobalErrorFallback from "./components/error/GlobalErrorFallback";
 import LandingLayout from "./components/layout/LandingLayout";
 import Layout from "./components/layout/Layout";
 import LandingPage from "./pages/LandingPage";
@@ -11,24 +12,30 @@ import { ROUTES } from "./constants/routes";
 const router = createBrowserRouter([
   {
     element: <LandingLayout />,
+    errorElement: <GlobalErrorFallback />,
     children: [{ path: ROUTES.HOME, element: <LandingPage /> }],
   },
   {
     element: <Layout />,
     children: [
-      { path: ROUTES.ITEMS, element: <UsedProductsPage /> },
       {
-        path: ROUTES.PRODUCT_REGISTRATION,
-        element: <ProductRegistrationPage />,
+        errorElement: <GlobalErrorFallback />,
+        children: [
+          { path: ROUTES.ITEMS, element: <UsedProductsPage /> },
+          {
+            path: ROUTES.PRODUCT_REGISTRATION,
+            element: <ProductRegistrationPage />,
+          },
+          { path: ROUTES.PRIVACY, element: <></> },
+          { path: ROUTES.FAQ, element: <></> },
+          { path: ROUTES.FREEBOARD, element: <></> },
+          {
+            path: ROUTES.ITEM_DETAIL,
+            element: <></>,
+          },
+          { path: ROUTES.LOGIN, element: <></> },
+        ],
       },
-      { path: ROUTES.PRIVACY, element: <></> },
-      { path: ROUTES.FAQ, element: <></> },
-      { path: ROUTES.FREEBOARD, element: <></> },
-      {
-        path: ROUTES.ITEM_DETAIL,
-        element: <></>,
-      },
-      { path: ROUTES.LOGIN, element: <></> },
     ],
   },
 ]);

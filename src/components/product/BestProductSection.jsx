@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import useDeviceType from "../../hooks/useDeviceType";
 
-import ErrorView from "../ui/ErrorView";
+import ErrorView from "../error/ErrorView";
 import Spinner from "../ui/Spinner";
 import ProductCard from "./ProductCard";
 

@@ -5,9 +5,9 @@ import useDeviceType from "../../hooks/useDeviceType";
 import useProducts from "../../hooks/useProducts";
 
 import { ROUTES } from "../../constants/routes";
+import ErrorView from "../error/ErrorView";
 import Button from "../ui/Button";
 import Dropdown from "../ui/Dropdown";
-import ErrorView from "../ui/ErrorView";
 import Pagination from "../ui/Pagination";
 import SearchInput from "../ui/SearchInput";
 import Spinner from "../ui/Spinner";
