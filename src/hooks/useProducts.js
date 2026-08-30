@@ -52,7 +52,13 @@ const useProducts = ({ page = 1, limit = 10, keyword = "" } = {}) => {
         const err = /** @type {import('axios').AxiosError<any>} */ (error);
 
         if (err.response) {
-          setError(err.response.data.message);
+          const errorMessage =
+            err.response?.data?.message ||
+            err.message ||
+            "상품 목록을 불러오지 못했습니다.";
+
+          setError(errorMessage);
+
           console.error(
             "❌ product 목록 조회 API 에러 발생: ",
             err.response.status,

@@ -101,7 +101,13 @@ function ProductForm() {
       const err = /** @type {import('axios').AxiosError<any>} */ (error);
 
       if (err.response) {
-        setError(err.response.data.message);
+        const errorMessage =
+          err.response?.data?.message ||
+          err.message ||
+          "상품 등록에 실패했습니다.";
+
+        setError(errorMessage);
+
         console.error(
           "❌ product 생성 API 에러 발생: ",
           err.response.status,
