@@ -5,5 +5,5 @@ import axios from "axios";
  */
 export const apiClient = axios.create({
   baseURL: "https://cloud-panda-market-api.onrender.com/api",
-  timeout: 10000,
+  timeout: 120000,
 });
