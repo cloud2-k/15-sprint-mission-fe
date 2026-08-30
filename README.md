@@ -2,47 +2,114 @@
 
 > 이 저장소는 판다마켓 프로젝트의 프론트엔드 리액트 미션을 수행하는 저장소입니다. 🔗 [판다마켓 바로가기🐼](https://cloud-panda-market.netlify.app/)
 
-## 스프린트 미션4
+## 1. 기술 스택
 
-### 기본 요구사항
+- **Runtime:** Node.js
+- **Package Manager:** Yarn (v1)
+- **Library:** React
+- **Routing:** React Router DOM
+- **Form Management:** React Hook Form
+- **Styling:** CSS Modules
+- **Code Quality:** ESLint (eslint-plugin-perfectionist)
 
-#### 공통
+## 2. 프로젝트 구조
 
-- [x] Github에 스프린트 미션 PR을 만들어 주세요.
-- [x] React를 사용해 진행합니다.
+```
+📦src
+ ┣ 📂api
+ ┃ ┣ 📜client.js
+ ┃ ┗ 📜product.js
+ ┣ 📂assets
+ ┃ ┣ 📜ic_arrow_down.svg
+ ┃ ┣ 📜ic_arrow_left.svg
+ ┃ ┣ 📜ic_arrow_right.svg
+ ┃ ┣ 📜ic_delete.svg
+ ┃ ┣ 📜ic_facebook.svg
+ ┃ ┣ 📜ic_heart.svg
+ ┃ ┣ 📜ic_instagram.svg
+ ┃ ┣ 📜ic_search.svg
+ ┃ ┣ 📜ic_sort.svg
+ ┃ ┣ 📜ic_twitter.svg
+ ┃ ┣ 📜ic_youtube.svg
+ ┃ ┣ 📜img_home_01.png
+ ┃ ┣ 📜img_home_02.png
+ ┃ ┣ 📜img_home_03.png
+ ┃ ┣ 📜img_home_bottom.png
+ ┃ ┣ 📜img_home_top.png
+ ┃ ┣ 📜img_logo_mo.svg
+ ┃ ┣ 📜img_logo_pc.svg
+ ┃ ┗ 📜img_product_default.png
+ ┣ 📂components
+ ┃ ┣ 📂error
+ ┃ ┃ ┣ 📜ErrorView.jsx
+ ┃ ┃ ┗ 📜GlobalErrorFallback.jsx
+ ┃ ┣ 📂landing
+ ┃ ┃ ┣ 📜FeatureCard.jsx
+ ┃ ┃ ┣ 📜FeatureCard.module.css
+ ┃ ┃ ┣ 📜FeatureSection.jsx
+ ┃ ┃ ┣ 📜FeatureSection.module.css
+ ┃ ┃ ┣ 📜HeroBanner.jsx
+ ┃ ┃ ┗ 📜HeroBanner.module.css
+ ┃ ┣ 📂layout
+ ┃ ┃ ┣ 📜Footer.jsx
+ ┃ ┃ ┣ 📜Footer.module.css
+ ┃ ┃ ┣ 📜Header.jsx
+ ┃ ┃ ┣ 📜Header.module.css
+ ┃ ┃ ┣ 📜LandingLayout.jsx
+ ┃ ┃ ┣ 📜Layout.jsx
+ ┃ ┃ ┣ 📜MainContent.jsx
+ ┃ ┃ ┗ 📜MainContent.module.css
+ ┃ ┣ 📂product
+ ┃ ┃ ┣ 📜BestProductSection.jsx
+ ┃ ┃ ┣ 📜BestProductSection.module.css
+ ┃ ┃ ┣ 📜ProductCard.jsx
+ ┃ ┃ ┣ 📜ProductCard.module.css
+ ┃ ┃ ┣ 📜ProductForm.jsx
+ ┃ ┃ ┣ 📜ProductForm.module.css
+ ┃ ┃ ┣ 📜ProductTagList.jsx
+ ┃ ┃ ┣ 📜ProductTagList.module.css
+ ┃ ┃ ┣ 📜SaleProductList.jsx
+ ┃ ┃ ┗ 📜SaleProductList.module.css
+ ┃ ┗ 📂ui
+ ┃ ┃ ┣ 📜Button.jsx
+ ┃ ┃ ┣ 📜Button.module.css
+ ┃ ┃ ┣ 📜Dropdown.jsx
+ ┃ ┃ ┣ 📜Dropdown.module.css
+ ┃ ┃ ┣ 📜Input.jsx
+ ┃ ┃ ┣ 📜Input.module.css
+ ┃ ┃ ┣ 📜Pagination.jsx
+ ┃ ┃ ┣ 📜Pagination.module.css
+ ┃ ┃ ┣ 📜SearchInput.jsx
+ ┃ ┃ ┣ 📜SearchInput.module.css
+ ┃ ┃ ┣ 📜Spinner.jsx
+ ┃ ┃ ┣ 📜Textarea.jsx
+ ┃ ┃ ┗ 📜Textarea.module.css
+ ┣ 📂constants
+ ┃ ┣ 📜breakpoints.js
+ ┃ ┗ 📜routes.js
+ ┣ 📂hooks
+ ┃ ┣ 📜useDeviceType.js
+ ┃ ┗ 📜useProducts.js
+ ┣ 📂pages
+ ┃ ┣ 📜LandingPage.jsx
+ ┃ ┣ 📜ProductRegistrationPage.jsx
+ ┃ ┗ 📜UsedProductsPage.jsx
+ ┣ 📜App.jsx
+ ┣ 📜index.css
+ ┗ 📜main.jsx
+```
 
-#### 중고마켓 페이지
+## 3. 실행
 
-- [x] PC, Tablet, Mobile 디자인에 해당하는 중고마켓 페이지를 만들어 주세요.
-- [x] 중고마켓 페이지 url path는 별도로 설정하지 않고, '/'에 보이도록 합니다.
-- [x] 상단 네비게이션 바, 푸터는 랜딩 페이지와 동일한 스타일과 규칙으로 만들어주세요.
-- [x] 상품 데이터는 https://panda-market-api.vercel.app/docs/에 명세된 GET 메소드 "/products" 를 활용해주세요.
-  - [x] 상품 목록 페이지네이션 기능을 구현합니다.
-  - [x] 드롭 다운으로 "최신 순" 또는 "좋아요 순"을 선택해서 정렬을 구현하세요.
-  - [x] 상품 목록 검색 기능을 구현합니다.
-- [x] 베스트 상품 데이터는 https://panda-market-api.vercel.app/docs/에 명세된 GET 메소드 "/products"의 정렬 기준 favorite을 사용해주세요.
+```bash
+# 의존성 설치
+yarn
 
-### 심화 요구사항
+# 로컬 개발 서버 실행 (Nodemon)
+yarn dev
+```
 
-#### 공통
-
-- [x] 커스텀 hook을 만들어 필요한 곳에 활용해 보세요.
-
-#### 중고마켓 페이지
-
-- [x] 중고 마켓의 카드 컴포넌트 반응형 기준은 다음과 같습니다.
-- 베스트 상품
-  - Desktop : 4열
-  - Tablet : 2열
-  - Mobile : 1열
-- 전체 상품
-  - Desktop : 5열
-  - Tablet : 3열
-  - Mobile : 2열
-- [x] 반응형에 따른 페이지 네이션 기능을 구현합니다.
-- [x] 반응형으로 보여지는 물품들의 개수를 다르게 설정할때 서버에 보내는 pageSize값을 적절하게 설정합니다.
-
-## 스프린트 미션5
+## 4. 스프린트 미션 (sprint 5)
 
 ### 기본 요구사항
 
@@ -51,65 +118,35 @@
 - [x] Github에 스프린트 미션 PR을 만들어 주세요.
 - [x] React, Express를 사용해 진행합니다.
 
-### 프론트엔드 구현 요구사항
-
 #### 랜딩 페이지
 
-- [ ] HTML과 CSS로 구현한 랜딩페이지를 React로 마이그레이션하세요.
-- [ ] 랜딩 페이지 url path는 "/"로 설정하세요.
+- [x] HTML과 CSS로 구현한 랜딩페이지를 React로 마이그레이션하세요.
+- [x] 랜딩 페이지 url path는 "/"로 설정하세요.
 
 #### 중고마켓 페이지
 
-- [ ] 중고마켓 페이지 url path를 "/items"으로 설정하세요.
-- [ ] 페이지 주소가 "/items" 일 때 상단내비게이션바의 "중고마켓" 버튼의 색상은 "3692FF"입니다.
-- [ ] 중고마켓 페이지 판매 중인 상품은 본인이 만든 GET 메서드를 사용해 주세요.
-  - [ ] 다만 좋아요 순 정렬 기능은 제외해 주세요.
-  - [ ] 사진은 디폴트 이미지로 프론트엔드에서 처리해주세요.
-  - [ ] 베스트 상품 목록 조회는 구현하지 않습니다.
-- [ ] '상품 등록하기' 버튼을 누르면 "/registration" 로 이동합니다. ( 빈 페이지 )
+- [x] 중고마켓 페이지 url path를 "/items"으로 설정하세요.
+- [x] 페이지 주소가 "/items" 일 때 상단내비게이션바의 "중고마켓" 버튼의 색상은 "3692FF"입니다.
+- [x] 중고마켓 페이지 판매 중인 상품은 본인이 만든 GET 메서드를 사용해 주세요.
+  - [x] 다만 좋아요 순 정렬 기능은 제외해 주세요.
+  - [x] 사진은 디폴트 이미지로 프론트엔드에서 처리해주세요.
+  - [x] 베스트 상품 목록 조회는 구현하지 않습니다.
+- [x] '상품 등록하기' 버튼을 누르면 "/registration" 로 이동합니다.
 
 #### 상품 등록 페이지
 
-- [ ] PC, Tablet, Mobile 디자인에 해당하는 상품 등록 페이지를 만들어 주세요.
-- [ ] 상품 등록 url path는 "/registration"입니다.
-- [ ] 상품 등록은 본인이 만든 POST 메서드를 사용해 주세요.
-- [ ] 등록 성공 시, 해당 상품 상세 페이지로 이동합니다. (빈페이지)
-
-### 백엔드 구현 요구사항
-
-#### 중고마켓
-
-- [ ] Product 스키마를 작성해 주세요.
-  - [ ] id, name, description, price, tags, createdAt, updatedAt필드를 가집니다.
-  - [ ] 필요한 필드가 있다면 자유롭게 추가해 주세요.
-- [ ] 상품 등록 API를 만들어 주세요.
-  - [ ] name, description, price, tags를 입력하여 상품을 등록합니다.
-- [ ] 상품 상세 조회 API를 만들어 주세요.
-  - [ ] id, name, description, price, tags, createdAt를 조회합니다.
-- [ ] 상품 수정 API를 만들어 주세요.
-  - [ ] PATCH 메서드를 사용해 주세요.
-- [ ] 상품 삭제 API를 만들어 주세요.
-- [ ] 상품 목록 조회 API를 만들어 주세요.
-  - [ ] id, name, price, createdAt를 조회합니다.
-  - [ ] offset 방식의 페이지네이션 기능을 포함해 주세요.
-  - [ ] 최신순(recent)으로 정렬할 수 있습니다.
-  - [ ] name, description에 포함된 단어로 검색할 수 있습니다.
-- [ ] 각 API에 적절한 에러 처리를 해 주세요.
-- [ ] 각 API 응답에 적절한 상태 코드를 리턴하도록 해 주세요.
-- [ ] `. env` 파일에 환경 변수를 설정해 주세요.
-- [ ] CORS를 설정해 주세요.
-- [ ] render.com로 배포해 주세요.
-- [ ] MongoDB를 활용해 주세요.
+- [x] PC, Tablet, Mobile 디자인에 해당하는 상품 등록 페이지를 만들어 주세요.
+- [x] 상품 등록 url path는 "/registration"입니다.
+- [x] 상품 등록은 본인이 만든 POST 메서드를 사용해 주세요.
+- [x] 등록 성공 시, 해당 상품 상세 페이지로 이동합니다. (빈페이지)
 
 ### 심화 요구사항
 
-### 프론트엔드 구현 요구사항
-
 #### 상품 등록 페이지
 
-- [ ] 모든 입력 input box에 빈 값이 있을 경우, 등록 버튼이 비활성화됩니다.
-- [ ] 태그를 입력한 후 엔터키를 누르면, 그 태그가 칩 형태로 쌓입니다.
-- [ ] 상품명, 상품 소개, 판매 가격, 태그에 대한 유효성 검사 Custom Hook을 만들어주세요. 유효성 검사를 통과하지 않을 경우, 각 input에 빨간색 테두리와, 각각의 Input 아래에 빨간색 에러 메시지를 보여주세요.
+- [x] 모든 입력 input box에 빈 값이 있을 경우, 등록 버튼이 비활성화됩니다.
+- [x] 태그를 입력한 후 엔터키를 누르면, 그 태그가 칩 형태로 쌓입니다.
+- [ ] 상품명, 상품 소개, 판매 가격, 태그에 대한 유효성 검사 Custom Hook을 만들어주세요. 유효성 검사를 통과하지 않을 경우, 각 input에 빨간색 테두리와, 각각의 Input 아래에 빨간색 에러 메시지를 보여주세요. -> Custom Hook은 만들지 않았지만, 기능은 구현하였습니다.
   - 유효한 조건
     - 상품명: 1자 이상, 10자 이내
     - 상품 소개: 10자 이상, 100자 이내
